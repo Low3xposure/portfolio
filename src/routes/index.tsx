@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Videoclips, comerciales y documentales producidos con una identidad visual saturada y viva.",
+          "Portafolio de Mateo Rivas, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Mateo Rivas — Productor Audiovisual" },
+      { name: "description", content: "Portafolio de Mateo Rivas, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Mateo Rivas — Productor Audiovisual" },
+      { property: "og:description", content: "Portafolio de Mateo Rivas, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Mateo Rivas — Productor Audiovisual" },
+      { name: "twitter:description", content: "Portafolio de Mateo Rivas, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/34dcb01a-026a-4103-b161-459f3079ae4b/id-preview-ade33ad1--c4564245-2cdf-433e-82c9-b70a8e359f0a.lovable.app-1785767174577.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/34dcb01a-026a-4103-b161-459f3079ae4b/id-preview-ade33ad1--c4564245-2cdf-433e-82c9-b70a8e359f0a.lovable.app-1785767174577.png" },
     ],
     links: [
       {
