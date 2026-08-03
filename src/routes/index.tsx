@@ -1,20 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroAsset from "@/assets/fluid-hero.png.asset.json";
+import heroBg from "@/assets/fluid-hero.svg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mateo Rivas — Productor Audiovisual" },
+      { title: "Jon Franco — Productor Audiovisual" },
       {
         name: "description",
         content:
-          "Portafolio de Mateo Rivas, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color.",
+          "Portafolio de Jon Franco, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color.",
       },
-      { property: "og:title", content: "Mateo Rivas — Productor Audiovisual" },
+      { property: "og:title", content: "Jon Franco — Productor Audiovisual" },
       {
         property: "og:description",
         content:
-          "Portafolio de Mateo Rivas, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color.",
+          "Portafolio de Jon Franco, productor audiovisual: videoclips, comerciales, documental y dirección de fotografía en color.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -75,7 +75,7 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate min-h-[92vh] px-6 pb-24 pt-8 sm:px-10">
         <img
-          src={heroAsset.url}
+          src={heroBg}
           alt="Textura fluida de pintura en colores saturados"
           className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover opacity-90"
         />
@@ -98,7 +98,7 @@ function Index() {
 
         <div className="mx-auto mt-[24vh] max-w-6xl">
           <p className="mb-6 inline-flex rounded-full border border-foreground/25 bg-background/40 px-4 py-1.5 text-xs uppercase tracking-[0.28em] backdrop-blur">
-            Productor audiovisual · CDMX
+            Productor audiovisual · Medellín
           </p>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
             Historias que se
@@ -106,7 +106,7 @@ function Index() {
             en color.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-foreground/85">
-            Soy Mateo Rivas. Dirijo y produzco videoclips, comerciales y documentales
+            Soy Jon Franco. Dirijo y produzco videoclips, comerciales y documentales
             donde la imagen se comporta como pintura líquida: intensa, orgánica, viva.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -188,16 +188,16 @@ function Index() {
             Cuéntame la idea y armamos el equipo, el plan y el presupuesto.
           </p>
           <a
-            href="mailto:hola@mateorivas.film"
+            href="mailto:hola@jonfranco.film"
             className="mt-10 inline-block rounded-full bg-background/80 px-8 py-4 text-sm font-medium backdrop-blur transition-transform hover:scale-[1.03]"
           >
-            hola@mateorivas.film
+            hola@jonfranco.film
           </a>
         </div>
       </section>
 
       <footer className="border-t border-border/60 px-6 py-10 text-center text-sm text-muted-foreground sm:px-10">
-        © 2026 Mateo Rivas · Producción audiovisual
+        © 2026 Jon Franco · Producción audiovisual
       </footer>
     </main>
   );
