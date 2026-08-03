@@ -190,12 +190,39 @@ function Index() {
           <p className="mx-auto mt-5 max-w-lg text-foreground/85">
             Cuéntame la idea y armamos el equipo, el plan y el presupuesto.
           </p>
-          <a
-            href="mailto:hola@jonfranco.film"
-            className="mt-10 inline-block rounded-full bg-background/80 px-8 py-4 text-sm font-medium backdrop-blur transition-transform hover:scale-[1.03]"
-          >
-            hola@jonfranco.film
-          </a>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="mailto:hola@jonfranco.film"
+              className="inline-block rounded-full bg-background/80 px-8 py-4 text-sm font-medium backdrop-blur transition-transform hover:scale-[1.03]"
+            >
+              hola@jonfranco.film
+            </a>
+            <a
+              href="https://instagram.com/jonfranco"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(120deg, var(--amber), var(--magenta) 55%, var(--violet))",
+              }}
+            >
+              <Instagram size={18} />
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/573000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
+              style={{
+                backgroundImage: "linear-gradient(120deg, var(--lime), var(--cyan))",
+              }}
+            >
+              <MessageCircle size={18} />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
