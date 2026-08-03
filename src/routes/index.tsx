@@ -82,7 +82,7 @@ function Index() {
         <div className="fade-mask pointer-events-none absolute inset-0 -z-10" />
 
         <nav className="mx-auto flex max-w-6xl items-center justify-between">
-          <span className="font-display text-lg font-bold tracking-tight">MR—</span>
+          <span className="font-display text-lg font-bold tracking-tight">JF—</span>
           <div className="hidden gap-8 text-sm text-foreground/80 sm:flex">
             <a href="#trabajos" className="transition-colors hover:text-accent">
               Trabajos
