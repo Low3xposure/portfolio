@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroBg from "@/assets/fluid-hero.svg";
+import { Instagram, MessageCircle } from "lucide-react";
+import heroAsset from "@/assets/hero-fluid.png.asset.json";
+
+const heroBg = heroAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
