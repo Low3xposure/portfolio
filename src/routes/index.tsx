@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 import heroAsset from "@/assets/hero-fluid.png.asset.json";
 
 const heroBg = heroAsset.url;
@@ -193,10 +193,16 @@ function Index() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="mailto:hola@jonfranco.film"
-              className="inline-block rounded-full bg-background/80 px-8 py-4 text-sm font-medium backdrop-blur transition-transform hover:scale-[1.03]"
+              className="glow inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(120deg, var(--cyan), var(--lime) 45%, var(--amber) 75%, var(--magenta))",
+              }}
             >
+              <Mail size={18} />
               hola@jonfranco.film
             </a>
+
             <a
               href="https://instagram.com/jonfranco"
               target="_blank"
