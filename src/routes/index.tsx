@@ -192,7 +192,7 @@ function Index() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:fjondylan@gmail.com"
+              href="mailto:low3xposure@gmail.com"
               className="glow inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
               style={{
                 backgroundImage:
@@ -200,8 +200,7 @@ function Index() {
               }}
             >
               <Mail size={18} />
-              fjondylan@gmail.com
-
+              low3xposure@gmail.com
             </a>
 
             <a
