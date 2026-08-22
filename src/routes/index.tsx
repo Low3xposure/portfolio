@@ -28,47 +28,47 @@ export const Route = createFileRoute("/")({
 
 const works = [
   {
-    title: "Neón Interior",
+    title: "VideoClip Musical",
     client: "Lumen Records",
     type: "Videoclip",
     year: "2026",
     accent: "var(--magenta)",
   },
   {
-    title: "Corriente",
+    title: "Fotografía Artistica",
     client: "Marea Studio",
     type: "Documental",
     year: "2025",
     accent: "var(--cyan)",
   },
   {
-    title: "Alta Fidelidad",
+    title: "Contenido Redes",
     client: "Sonora",
     type: "Spot comercial",
-    year: "2025",
+    year: "2026",
     accent: "var(--lime)",
   },
   {
-    title: "Ruido Blanco",
+    title: "Campañas",
     client: "Festival Óxido",
     type: "Aftermovie",
-    year: "2024",
+    year: "2025",
     accent: "var(--amber)",
   },
 ];
 
 const services = [
   {
-    title: "Dirección y producción",
+    title: "Dirección y Producción",
     body: "De la idea al montaje final: guion, casting, plan de rodaje y post.",
   },
   {
-    title: "Dirección de fotografía",
+    title: "Dirección de fotografía y Cámara",
     body: "Luz, color y cámara con una paleta construida a medida de cada historia.",
   },
   {
-    title: "Color y post",
-    body: "Etalonaje, VFX ligero, diseño sonoro y entregas para cine, TV y redes.",
+    title: "Color y Post-Producción",
+    body: "Edición en Lightroom, Photoshop, Premiere, Capcut, After Effects.",
   },
 ];
 
@@ -109,8 +109,7 @@ function Index() {
             en color.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-foreground/85">
-            Soy Jon Franco. Dirijo y produzco videoclips, comerciales y documentales
-            donde la imagen se comporta como pintura líquida: intensa, orgánica, viva.
+            Soy Low Exposure&nbsp; Productor audiovisual&nbsp; y Fotógrafo dirijo y produzco videoclips, cortometrajes, contenido en redes y campañas publicitarias.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
