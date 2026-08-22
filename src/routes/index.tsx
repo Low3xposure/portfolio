@@ -109,7 +109,7 @@ function Index() {
             en color.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-foreground/85">
-            Soy Low Exposure&nbsp; Productor audiovisual&nbsp; y Fotógrafo dirijo y produzco videoclips, cortometrajes, contenido en redes y campañas publicitarias.
+            Soy Low Exposure&nbsp; Productor audiovisual&nbsp; y Fotógrafo. Dirijo y produzco videoclips, cortometrajes, contenido en redes y campañas publicitarias.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
