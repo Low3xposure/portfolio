@@ -109,8 +109,7 @@ function Index() {
             en color.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-foreground/85">
-            Soy Jon Franco. Dirijo y produzco videoclips, comerciales y documentales
-            donde la imagen se comporta como pintura líquida: intensa, orgánica, viva.
+            Soy Low Exposure&nbsp; Productor audiovisual&nbsp; y Fotógrafo dirijo y produzco videoclips, cortometrajes, contenido en redes y campañas publicitarias.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
