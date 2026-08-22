@@ -204,7 +204,7 @@ function Index() {
             </a>
 
             <a
-              href="https://instagram.com/jonfranco"
+              href="https://www.instagram.com/low_3xposure?igsi=MWhuZnF6OW9kNXNpNQ=="
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
@@ -217,7 +217,7 @@ function Index() {
               Instagram
             </a>
             <a
-              href="https://wa.me/573000000000"
+              href="https://wa.me/qr/VQN7B26RTZC3M1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
