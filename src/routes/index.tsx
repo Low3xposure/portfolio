@@ -59,16 +59,16 @@ const works = [
 
 const services = [
   {
-    title: "Dirección y producción",
+    title: "Dirección y Producción",
     body: "De la idea al montaje final: guion, casting, plan de rodaje y post.",
   },
   {
-    title: "Dirección de fotografía",
+    title: "Dirección de fotografía y Cámara",
     body: "Luz, color y cámara con una paleta construida a medida de cada historia.",
   },
   {
-    title: "Color y post",
-    body: "Etalonaje, VFX ligero, diseño sonoro y entregas para cine, TV y redes.",
+    title: "Color y Post-Producción",
+    body: "Edición en Lightroom, Photoshop, Premiere, Capcut, After Effects.",
   },
 ];
 
