@@ -28,31 +28,31 @@ export const Route = createFileRoute("/")({
 
 const works = [
   {
-    title: "Neón Interior",
+    title: "VideoClip Musical",
     client: "Lumen Records",
     type: "Videoclip",
     year: "2026",
     accent: "var(--magenta)",
   },
   {
-    title: "Corriente",
+    title: "Fotografía Artistica",
     client: "Marea Studio",
     type: "Documental",
     year: "2025",
     accent: "var(--cyan)",
   },
   {
-    title: "Alta Fidelidad",
+    title: "Contenido Redes",
     client: "Sonora",
     type: "Spot comercial",
-    year: "2025",
+    year: "2026",
     accent: "var(--lime)",
   },
   {
-    title: "Ruido Blanco",
+    title: "Campañas",
     client: "Festival Óxido",
     type: "Aftermovie",
-    year: "2024",
+    year: "2025",
     accent: "var(--amber)",
   },
 ];
