@@ -213,7 +213,7 @@ function Index() {
               >
                 <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
                   <img
-                    src={campaigns[0].cover}
+                    src={campaigns[0]!.cover}
                     alt="Portada de la campaña Abalas"
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
