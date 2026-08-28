@@ -358,6 +358,85 @@ function Index() {
           </div>
         </div>
       )}
+      {/* Campañas overlay */}
+      {campaignsOpen && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-md">
+          <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
+            <div className="mb-10 flex items-center justify-between gap-4">
+              {activeCampaign ? (
+                <button
+                  onClick={() => setActiveCampaign(null)}
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
+                >
+                  <ArrowLeft size={16} />
+                  Todas las campañas
+                </button>
+              ) : (
+                <h2 className="text-3xl font-bold sm:text-5xl">Campañas</h2>
+              )}
+              <button
+                onClick={() => {
+                  setCampaignsOpen(false);
+                  setActiveCampaign(null);
+                }}
+                aria-label="Cerrar campañas"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-card/70 backdrop-blur transition-transform hover:scale-110"
+              >
+                <X size={22} />
+              </button>
+            </div>
+
+            {!activeCampaign ? (
+              <div className="grid gap-6 sm:grid-cols-2">
+                {campaigns.map((c) => (
+                  <article
+                    key={c.slug}
+                    onClick={() => setActiveCampaign(c)}
+                    className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
+                  >
+                    <div className="relative h-80 overflow-hidden rounded-[1.4rem]">
+                      <img
+                        src={c.cover}
+                        alt={`Portada de la campaña ${c.name}`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
+                      <div className="absolute bottom-0 left-0 p-6">
+                        <h3 className="text-spectrum text-3xl font-bold">{c.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {c.client} · {c.year}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
+                  {activeCampaign.name}
+                </h3>
+                <p className="mt-4 max-w-xl text-foreground/85">{activeCampaign.description}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {activeCampaign.client} · {activeCampaign.year}
+                </p>
+                <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
+                  {activeCampaign.media.map((m) => (
+                    <img
+                      key={m.url}
+                      src={m.url}
+                      alt={m.alt}
+                      loading="lazy"
+                      className="mb-6 w-full break-inside-avoid rounded-2xl border border-border/60"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
