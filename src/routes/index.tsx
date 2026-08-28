@@ -269,6 +269,34 @@ function Index() {
       <footer className="border-t border-border/60 px-6 py-10 text-center text-sm text-muted-foreground sm:px-10">
         © 2026 Jon Franco · Producción audiovisual
       </footer>
+
+      {/* Video overlay */}
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+          onClick={() => setVideoOpen(false)}
+        >
+          <button
+            onClick={() => setVideoOpen(false)}
+            aria-label="Cerrar video"
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur transition-transform hover:scale-110"
+          >
+            <X size={22} />
+          </button>
+          <div
+            className="aspect-video w-[95vw] max-w-6xl overflow-hidden rounded-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
+              title="VideoClip Musical"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
