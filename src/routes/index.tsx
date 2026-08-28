@@ -200,6 +200,35 @@ function Index() {
                   <span className="text-sm text-muted-foreground">{w.year}</span>
                 </div>
               </article>
+            ) : w.title === "Campañas" ? (
+              <article
+                key={w.title}
+                className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
+                onClick={() => {
+                  setCampaignsOpen(true);
+                  setActiveCampaign(null);
+                }}
+              >
+                <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
+                  <img
+                    src={campaigns[0].cover}
+                    alt="Portada de la campaña Abalas"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                  <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
+                    {campaigns.length} campaña{campaigns.length > 1 ? "s" : ""}
+                  </span>
+                </div>
+                <div className="flex items-baseline justify-between px-5 py-5">
+                  <div>
+                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <p className="text-sm text-muted-foreground">{w.client}</p>
+                  </div>
+                  <span className="text-sm text-muted-foreground">{w.year}</span>
+                </div>
+              </article>
             ) : (
               <article key={w.title} className="card-fluid group overflow-hidden rounded-3xl p-1">
                 <div
