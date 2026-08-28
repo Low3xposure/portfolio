@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Instagram, Mail, MessageCircle, Play, X } from "lucide-react";
 import heroAsset from "@/assets/hero-fluid.png.asset.json";
 
 const heroBg = heroAsset.url;
+
+const YOUTUBE_ID = "dAr6lIUvrrQ";
 
 export const Route = createFileRoute("/")({
   head: () => ({
