@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Instagram, Mail, MessageCircle, Play, X } from "lucide-react";
 import heroAsset from "@/assets/hero-fluid.png.asset.json";
 
 const heroBg = heroAsset.url;
+
+const YOUTUBE_ID = "dAr6lIUvrrQ";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -73,6 +76,8 @@ const services = [
 ];
 
 function Index() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <main className="relative min-h-screen overflow-hidden">
       {/* Hero */}
@@ -136,27 +141,57 @@ function Index() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {works.map((w) => (
-            <article key={w.title} className="card-fluid group overflow-hidden rounded-3xl p-1">
-              <div
-                className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6"
-                style={{
-                  backgroundImage: `radial-gradient(120% 120% at 10% 100%, ${w.accent} 0%, transparent 55%), radial-gradient(100% 100% at 90% 0%, var(--violet) 0%, transparent 60%), linear-gradient(160deg, var(--card), var(--background))`,
-                }}
+          {works.map((w) =>
+            w.title === "VideoClip Musical" ? (
+              <article
+                key={w.title}
+                className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
+                onClick={() => setVideoOpen(true)}
               >
-                <span className="rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                  {w.type}
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between px-5 py-5">
-                <div>
-                  <h3 className="text-xl font-bold">{w.title}</h3>
-                  <p className="text-sm text-muted-foreground">{w.client}</p>
+                <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
+                  <img
+                    src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+                    alt="Miniatura del VideoClip Musical en YouTube"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 backdrop-blur transition-transform group-hover:scale-110">
+                    <Play size={28} className="ml-1 text-white" fill="currentColor" />
+                  </span>
+                  <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
+                    {w.type}
+                  </span>
                 </div>
-                <span className="text-sm text-muted-foreground">{w.year}</span>
-              </div>
-            </article>
-          ))}
+                <div className="flex items-baseline justify-between px-5 py-5">
+                  <div>
+                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <p className="text-sm text-muted-foreground">{w.client}</p>
+                  </div>
+                  <span className="text-sm text-muted-foreground">{w.year}</span>
+                </div>
+              </article>
+            ) : (
+              <article key={w.title} className="card-fluid group overflow-hidden rounded-3xl p-1">
+                <div
+                  className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6"
+                  style={{
+                    backgroundImage: `radial-gradient(120% 120% at 10% 100%, ${w.accent} 0%, transparent 55%), radial-gradient(100% 100% at 90% 0%, var(--violet) 0%, transparent 60%), linear-gradient(160deg, var(--card), var(--background))`,
+                  }}
+                >
+                  <span className="rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
+                    {w.type}
+                  </span>
+                </div>
+                <div className="flex items-baseline justify-between px-5 py-5">
+                  <div>
+                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <p className="text-sm text-muted-foreground">{w.client}</p>
+                  </div>
+                  <span className="text-sm text-muted-foreground">{w.year}</span>
+                </div>
+              </article>
+            ),
+          )}
         </div>
       </section>
 
@@ -234,6 +269,34 @@ function Index() {
       <footer className="border-t border-border/60 px-6 py-10 text-center text-sm text-muted-foreground sm:px-10">
         © 2026 Jon Franco · Producción audiovisual
       </footer>
+
+      {/* Video overlay */}
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+          onClick={() => setVideoOpen(false)}
+        >
+          <button
+            onClick={() => setVideoOpen(false)}
+            aria-label="Cerrar video"
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur transition-transform hover:scale-110"
+          >
+            <X size={22} />
+          </button>
+          <div
+            className="aspect-video w-[95vw] max-w-6xl overflow-hidden rounded-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
+              title="VideoClip Musical"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
