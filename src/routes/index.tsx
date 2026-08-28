@@ -76,6 +76,8 @@ const services = [
 ];
 
 function Index() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <main className="relative min-h-screen overflow-hidden">
       {/* Hero */}
