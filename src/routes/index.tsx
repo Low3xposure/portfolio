@@ -107,6 +107,8 @@ const services = [
 
 function Index() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [campaignsOpen, setCampaignsOpen] = useState(false);
+  const [activeCampaign, setActiveCampaign] = useState<Campaign | null>(null);
 
   return (
     <main className="relative min-h-screen overflow-hidden">
