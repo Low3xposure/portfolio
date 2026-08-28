@@ -1,9 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Instagram, Mail, MessageCircle, Play, X } from "lucide-react";
+import { ArrowLeft, Instagram, Mail, MessageCircle, Play, X } from "lucide-react";
 import heroAsset from "@/assets/hero-fluid.png.asset.json";
+import abalas1 from "@/assets/DSC07336.jpg.asset.json";
+import abalas2 from "@/assets/DSC07346.jpg.asset.json";
+import abalas3 from "@/assets/DSC07367.jpg.asset.json";
 
 const heroBg = heroAsset.url;
+
+type Campaign = {
+  slug: string;
+  name: string;
+  client: string;
+  year: string;
+  cover: string;
+  description: string;
+  media: { url: string; alt: string }[];
+};
+
+const campaigns: Campaign[] = [
+  {
+    slug: "abalas",
+    name: "Abalas",
+    client: "Ghetto Running Club",
+    year: "2026",
+    cover: abalas1.url,
+    description:
+      "Campaña de moda urbana: dirección, fotografía y color para la colección Ghetto Running Club.",
+    media: [
+      { url: abalas1.url, alt: "Retrato a contrapicado con cielo azul — campaña Abalas" },
+      { url: abalas2.url, alt: "Retrato frente a muro naranja con grafiti — campaña Abalas" },
+      { url: abalas3.url, alt: "Retrato cenital apoyado en estructura azul — campaña Abalas" },
+    ],
+  },
+];
 
 const YOUTUBE_ID = "dAr6lIUvrrQ";
 
