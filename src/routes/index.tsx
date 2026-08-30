@@ -5,6 +5,14 @@ import heroAsset from "@/assets/hero-fluid.png.asset.json";
 import abalas1 from "@/assets/DSC07336.jpg.asset.json";
 import abalas2 from "@/assets/DSC07346.jpg.asset.json";
 import abalas3 from "@/assets/DSC07367.jpg.asset.json";
+import sg1 from "@/assets/DSC06453_1.jpg.asset.json";
+import sg2 from "@/assets/DSC06461_2.jpg.asset.json";
+import sg3 from "@/assets/DSC06474_2.jpg.asset.json";
+import sg4 from "@/assets/tefa_cortina_roja_2.jpg.asset.json";
+import sk1 from "@/assets/5-Recuperado.webp.asset.json";
+import sk2 from "@/assets/6-Recuperado.webp.asset.json";
+import sk3 from "@/assets/10-Recuperado.webp.asset.json";
+import sk4 from "@/assets/11-Recuperado.webp.asset.json";
 
 const heroBg = heroAsset.url;
 
@@ -34,6 +42,38 @@ const campaigns: Campaign[] = [
     ],
   },
 ];
+
+const sessions: Campaign[] = [
+  {
+    slug: "strange-girl",
+    name: "Strange Girl",
+    client: "Sesión fotográfica",
+    year: "2026",
+    cover: sg4.url,
+    description: "Eres una mujer extraña, parece que vienes de otro mundo",
+    media: [
+      { url: sg1.url, alt: "Retrato con brazos alzados sobre cortina roja — Strange Girl" },
+      { url: sg2.url, alt: "Silueta de perfil a contraluz sobre cortina roja — Strange Girl" },
+      { url: sg3.url, alt: "Retrato cenital entre pliegues de cortina roja — Strange Girl" },
+      { url: sg4.url, alt: "Rostro emergiendo del centro de una cortina roja — Strange Girl" },
+    ],
+  },
+  {
+    slug: "skate",
+    name: "Skate",
+    client: "Sesión fotográfica",
+    year: "2026",
+    cover: sk2.url,
+    description: "Con la mente fría y las ruedas en llamas",
+    media: [
+      { url: sk1.url, alt: "Skater en el borde de la rampa de noche — sesión Skate" },
+      { url: sk2.url, alt: "Skater de pie frente a muro rosado con grafiti — sesión Skate" },
+      { url: sk3.url, alt: "Skater sentado en el borde de la rampa con su tabla — sesión Skate" },
+      { url: sk4.url, alt: "Skater en pleno truco sobre la rampa — sesión Skate" },
+    ],
+  },
+];
+
 
 const YOUTUBE_ID = "dAr6lIUvrrQ";
 
