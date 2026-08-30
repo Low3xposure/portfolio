@@ -5,6 +5,14 @@ import heroAsset from "@/assets/hero-fluid.png.asset.json";
 import abalas1 from "@/assets/DSC07336.jpg.asset.json";
 import abalas2 from "@/assets/DSC07346.jpg.asset.json";
 import abalas3 from "@/assets/DSC07367.jpg.asset.json";
+import sg1 from "@/assets/DSC06453_1.jpg.asset.json";
+import sg2 from "@/assets/DSC06461_2.jpg.asset.json";
+import sg3 from "@/assets/DSC06474_2.jpg.asset.json";
+import sg4 from "@/assets/tefa_cortina_roja_2.jpg.asset.json";
+import sk1 from "@/assets/5-Recuperado.webp.asset.json";
+import sk2 from "@/assets/6-Recuperado.webp.asset.json";
+import sk3 from "@/assets/10-Recuperado.webp.asset.json";
+import sk4 from "@/assets/11-Recuperado.webp.asset.json";
 
 const heroBg = heroAsset.url;
 
@@ -34,6 +42,38 @@ const campaigns: Campaign[] = [
     ],
   },
 ];
+
+const sessions: Campaign[] = [
+  {
+    slug: "strange-girl",
+    name: "Strange Girl",
+    client: "Sesión fotográfica",
+    year: "2026",
+    cover: sg4.url,
+    description: "Eres una mujer extraña, parece que vienes de otro mundo",
+    media: [
+      { url: sg1.url, alt: "Retrato con brazos alzados sobre cortina roja — Strange Girl" },
+      { url: sg2.url, alt: "Silueta de perfil a contraluz sobre cortina roja — Strange Girl" },
+      { url: sg3.url, alt: "Retrato cenital entre pliegues de cortina roja — Strange Girl" },
+      { url: sg4.url, alt: "Rostro emergiendo del centro de una cortina roja — Strange Girl" },
+    ],
+  },
+  {
+    slug: "skate",
+    name: "Skate",
+    client: "Sesión fotográfica",
+    year: "2026",
+    cover: sk2.url,
+    description: "Con la mente fría y las ruedas en llamas",
+    media: [
+      { url: sk1.url, alt: "Skater en el borde de la rampa de noche — sesión Skate" },
+      { url: sk2.url, alt: "Skater de pie frente a muro rosado con grafiti — sesión Skate" },
+      { url: sk3.url, alt: "Skater sentado en el borde de la rampa con su tabla — sesión Skate" },
+      { url: sk4.url, alt: "Skater en pleno truco sobre la rampa — sesión Skate" },
+    ],
+  },
+];
+
 
 const YOUTUBE_ID = "dAr6lIUvrrQ";
 
@@ -108,6 +148,8 @@ const services = [
 function Index() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [campaignsOpen, setCampaignsOpen] = useState(false);
+  const [sessionsOpen, setSessionsOpen] = useState(false);
+  const [activeSession, setActiveSession] = useState<Campaign | null>(null);
   const [activeCampaign, setActiveCampaign] = useState<Campaign | null>(null);
 
   return (
@@ -221,6 +263,35 @@ function Index() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
                     {campaigns.length} campaña{campaigns.length > 1 ? "s" : ""}
+                  </span>
+                </div>
+                <div className="flex items-baseline justify-between px-5 py-5">
+                  <div>
+                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <p className="text-sm text-muted-foreground">{w.client}</p>
+                  </div>
+                  <span className="text-sm text-muted-foreground">{w.year}</span>
+                </div>
+              </article>
+            ) : w.title === "Fotografía Artistica" ? (
+              <article
+                key={w.title}
+                className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
+                onClick={() => {
+                  setSessionsOpen(true);
+                  setActiveSession(null);
+                }}
+              >
+                <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
+                  <img
+                    src={sessions[0]!.cover}
+                    alt="Portada de la sesión Strange Girl"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                  <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
+                    {sessions.length} sesiones
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between px-5 py-5">
@@ -423,6 +494,85 @@ function Index() {
                 </p>
                 <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
                   {activeCampaign.media.map((m) => (
+                    <img
+                      key={m.url}
+                      src={m.url}
+                      alt={m.alt}
+                      loading="lazy"
+                      className="mb-6 w-full break-inside-avoid rounded-2xl border border-border/60"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+      {/* Sesiones fotográficas overlay */}
+      {sessionsOpen && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-md">
+          <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
+            <div className="mb-10 flex items-center justify-between gap-4">
+              {activeSession ? (
+                <button
+                  onClick={() => setActiveSession(null)}
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
+                >
+                  <ArrowLeft size={16} />
+                  Todas las sesiones
+                </button>
+              ) : (
+                <h2 className="text-3xl font-bold sm:text-5xl">Fotografía Artística</h2>
+              )}
+              <button
+                onClick={() => {
+                  setSessionsOpen(false);
+                  setActiveSession(null);
+                }}
+                aria-label="Cerrar sesiones fotográficas"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-card/70 backdrop-blur transition-transform hover:scale-110"
+              >
+                <X size={22} />
+              </button>
+            </div>
+
+            {!activeSession ? (
+              <div className="grid gap-6 sm:grid-cols-2">
+                {sessions.map((s) => (
+                  <article
+                    key={s.slug}
+                    onClick={() => setActiveSession(s)}
+                    className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
+                  >
+                    <div className="relative h-80 overflow-hidden rounded-[1.4rem]">
+                      <img
+                        src={s.cover}
+                        alt={`Portada de la sesión ${s.name}`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
+                      <div className="absolute bottom-0 left-0 p-6">
+                        <h3 className="text-spectrum text-3xl font-bold">{s.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {s.client} · {s.year}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
+                  {activeSession.name}
+                </h3>
+                <p className="mt-4 max-w-xl text-foreground/85">{activeSession.description}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {activeSession.client} · {activeSession.year}
+                </p>
+                <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
+                  {activeSession.media.map((m) => (
                     <img
                       key={m.url}
                       src={m.url}
