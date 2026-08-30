@@ -50,7 +50,28 @@ const campaigns: Campaign[] = [
       { url: abalas3.url, alt: "Retrato cenital apoyado en estructura azul — campaña Abalas" },
     ],
   },
+  {
+    slug: "zero",
+    name: "Zero",
+    client: "Zero — marca de ropa alternativa",
+    year: "2026",
+    cover: z3.url,
+    description: "Todo empieza desde Zero",
+    role: "Dirección artística y fotográfica",
+    media: [
+      { url: z1.url, alt: "Retrato frontal con camiseta blanca Zero — campaña Zero" },
+      { url: z2.url, alt: "Espalda con estampado tribal en camiseta blanca — campaña Zero" },
+      { url: z3.url, alt: "Detalle del estampado tribal en la espalda — campaña Zero" },
+      { url: z4.url, alt: "Retrato con gafas y camiseta sin mangas con llamas — campaña Zero" },
+      { url: z5.url, alt: "Espalda con estampado Reborn en camiseta sin mangas — campaña Zero" },
+      { url: z6.url, alt: "Retrato con camiseta de calaveras — campaña Zero" },
+      { url: z7.url, alt: "Espalda con estampado tribal plateado — campaña Zero" },
+      { url: z8.url, alt: "Retrato con camiseta negra tribal — campaña Zero" },
+      { url: z9.url, alt: "Primer plano con gafas y camiseta negra tribal — campaña Zero" },
+    ],
+  },
 ];
+
 
 const sessions: Campaign[] = [
   {
