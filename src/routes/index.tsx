@@ -13,6 +13,15 @@ import sk1 from "@/assets/5-Recuperado.webp.asset.json";
 import sk2 from "@/assets/6-Recuperado.webp.asset.json";
 import sk3 from "@/assets/10-Recuperado.webp.asset.json";
 import sk4 from "@/assets/11-Recuperado.webp.asset.json";
+import z1 from "@/assets/DSC9691.jpg.asset.json";
+import z2 from "@/assets/DSC9694.jpg.asset.json";
+import z3 from "@/assets/DSC9695.jpg.asset.json";
+import z4 from "@/assets/DSC9699.jpg.asset.json";
+import z5 from "@/assets/DSC9701.jpg.asset.json";
+import z6 from "@/assets/DSC9709.jpg.asset.json";
+import z7 from "@/assets/DSC9714.jpg.asset.json";
+import z8 from "@/assets/DSC9720.jpg.asset.json";
+import z9 from "@/assets/DSC9723.jpg.asset.json";
 
 const heroBg = heroAsset.url;
 
@@ -23,6 +32,7 @@ type Campaign = {
   year: string;
   cover: string;
   description: string;
+  role?: string;
   media: { url: string; alt: string }[];
 };
 
@@ -41,7 +51,28 @@ const campaigns: Campaign[] = [
       { url: abalas3.url, alt: "Retrato cenital apoyado en estructura azul — campaña Abalas" },
     ],
   },
+  {
+    slug: "zero",
+    name: "Zero",
+    client: "Zero — marca de ropa alternativa",
+    year: "2026",
+    cover: z3.url,
+    description: "Todo empieza desde Zero",
+    role: "Dirección artística y fotográfica",
+    media: [
+      { url: z1.url, alt: "Retrato frontal con camiseta blanca Zero — campaña Zero" },
+      { url: z2.url, alt: "Espalda con estampado tribal en camiseta blanca — campaña Zero" },
+      { url: z3.url, alt: "Detalle del estampado tribal en la espalda — campaña Zero" },
+      { url: z4.url, alt: "Retrato con gafas y camiseta sin mangas con llamas — campaña Zero" },
+      { url: z5.url, alt: "Espalda con estampado Reborn en camiseta sin mangas — campaña Zero" },
+      { url: z6.url, alt: "Retrato con camiseta de calaveras — campaña Zero" },
+      { url: z7.url, alt: "Espalda con estampado tribal plateado — campaña Zero" },
+      { url: z8.url, alt: "Retrato con camiseta negra tribal — campaña Zero" },
+      { url: z9.url, alt: "Primer plano con gafas y camiseta negra tribal — campaña Zero" },
+    ],
+  },
 ];
+
 
 const sessions: Campaign[] = [
   {
@@ -489,6 +520,11 @@ function Index() {
                   {activeCampaign.name}
                 </h3>
                 <p className="mt-4 max-w-xl text-foreground/85">{activeCampaign.description}</p>
+                {activeCampaign.role && (
+                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-foreground/60">
+                    {activeCampaign.role}
+                  </p>
+                )}
                 <p className="mt-2 text-sm text-muted-foreground">
                   {activeCampaign.client} · {activeCampaign.year}
                 </p>
