@@ -13,6 +13,15 @@ import sk1 from "@/assets/5-Recuperado.webp.asset.json";
 import sk2 from "@/assets/6-Recuperado.webp.asset.json";
 import sk3 from "@/assets/10-Recuperado.webp.asset.json";
 import sk4 from "@/assets/11-Recuperado.webp.asset.json";
+import z1 from "@/assets/DSC9691.jpg.asset.json";
+import z2 from "@/assets/DSC9694.jpg.asset.json";
+import z3 from "@/assets/DSC9695.jpg.asset.json";
+import z4 from "@/assets/DSC9699.jpg.asset.json";
+import z5 from "@/assets/DSC9701.jpg.asset.json";
+import z6 from "@/assets/DSC9709.jpg.asset.json";
+import z7 from "@/assets/DSC9714.jpg.asset.json";
+import z8 from "@/assets/DSC9720.jpg.asset.json";
+import z9 from "@/assets/DSC9723.jpg.asset.json";
 
 const heroBg = heroAsset.url;
 
