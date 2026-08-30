@@ -520,6 +520,11 @@ function Index() {
                   {activeCampaign.name}
                 </h3>
                 <p className="mt-4 max-w-xl text-foreground/85">{activeCampaign.description}</p>
+                {activeCampaign.role && (
+                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-foreground/60">
+                    {activeCampaign.role}
+                  </p>
+                )}
                 <p className="mt-2 text-sm text-muted-foreground">
                   {activeCampaign.client} · {activeCampaign.year}
                 </p>
