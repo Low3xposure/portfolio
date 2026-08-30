@@ -32,6 +32,7 @@ type Campaign = {
   year: string;
   cover: string;
   description: string;
+  role?: string;
   media: { url: string; alt: string }[];
 };
 
