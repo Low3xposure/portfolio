@@ -508,6 +508,85 @@ function Index() {
           </div>
         </div>
       )}
+      {/* Sesiones fotográficas overlay */}
+      {sessionsOpen && (
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-md">
+          <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
+            <div className="mb-10 flex items-center justify-between gap-4">
+              {activeSession ? (
+                <button
+                  onClick={() => setActiveSession(null)}
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
+                >
+                  <ArrowLeft size={16} />
+                  Todas las sesiones
+                </button>
+              ) : (
+                <h2 className="text-3xl font-bold sm:text-5xl">Fotografía Artística</h2>
+              )}
+              <button
+                onClick={() => {
+                  setSessionsOpen(false);
+                  setActiveSession(null);
+                }}
+                aria-label="Cerrar sesiones fotográficas"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-card/70 backdrop-blur transition-transform hover:scale-110"
+              >
+                <X size={22} />
+              </button>
+            </div>
+
+            {!activeSession ? (
+              <div className="grid gap-6 sm:grid-cols-2">
+                {sessions.map((s) => (
+                  <article
+                    key={s.slug}
+                    onClick={() => setActiveSession(s)}
+                    className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
+                  >
+                    <div className="relative h-80 overflow-hidden rounded-[1.4rem]">
+                      <img
+                        src={s.cover}
+                        alt={`Portada de la sesión ${s.name}`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
+                      <div className="absolute bottom-0 left-0 p-6">
+                        <h3 className="text-spectrum text-3xl font-bold">{s.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {s.client} · {s.year}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
+                  {activeSession.name}
+                </h3>
+                <p className="mt-4 max-w-xl text-foreground/85">{activeSession.description}</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {activeSession.client} · {activeSession.year}
+                </p>
+                <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
+                  {activeSession.media.map((m) => (
+                    <img
+                      key={m.url}
+                      src={m.url}
+                      alt={m.alt}
+                      loading="lazy"
+                      className="mb-6 w-full break-inside-avoid rounded-2xl border border-border/60"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
