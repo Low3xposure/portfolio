@@ -148,6 +148,8 @@ const services = [
 function Index() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [campaignsOpen, setCampaignsOpen] = useState(false);
+  const [sessionsOpen, setSessionsOpen] = useState(false);
+  const [activeSession, setActiveSession] = useState<Campaign | null>(null);
   const [activeCampaign, setActiveCampaign] = useState<Campaign | null>(null);
 
   return (
