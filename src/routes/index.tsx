@@ -2,10 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, Instagram, Mail, MessageCircle, Play, X } from "lucide-react";
 import heroAsset from "@/assets/hero-fluid.png.asset.json";
-import nito1 from "@/assets/nitodlab_3images.png.asset.json";
-import nito2 from "@/assets/Nito-MORELO.jpg.asset.json";
-import nito3 from "@/assets/Nito-JUAN.jpg.asset.json";
-import nito4 from "@/assets/Nito-ANDRES.jpg.asset.json";
 import abalas1 from "@/assets/DSC07336.jpg.asset.json";
 import abalas2 from "@/assets/DSC07346.jpg.asset.json";
 import abalas3 from "@/assets/DSC07367.jpg.asset.json";
@@ -110,54 +106,7 @@ const sessions: Campaign[] = [
 ];
 
 
-type Video = { id: string; title: string; description: string; year: string };
-
-const videos: Video[] = [
-  {
-    id: "_RBDUrfNy-8",
-    title: "Ojos Color Miel",
-    description: "VideoClip Musical en Colaboración con la banda local CoolMind.",
-    year: "2026",
-  },
-  {
-    id: "dAr6lIUvrrQ",
-    title: "VideoClip Musical",
-    description: "Videoclip musical — dirección, cámara y post.",
-    year: "2025",
-  },
-];
-
-type SocialProject = {
-  slug: string;
-  name: string;
-  client: string;
-  year: string;
-  cover: string;
-  description: string;
-  instagram: string;
-  reel: string;
-  media: { url: string; alt: string }[];
-};
-
-const socialProjects: SocialProject[] = [
-  {
-    slug: "nito-dlab",
-    name: "Nito D'Lab",
-    client: "Banda · Contenido y redes sociales",
-    year: "2026",
-    cover: nito1.url,
-    description:
-      "Creo el contenido, manejo las redes sociales y cubro los eventos de la banda Nito D'Lab.",
-    instagram: "https://www.instagram.com/nitodelab/",
-    reel: "https://www.instagram.com/p/DcMMzECKO0D/",
-    media: [
-      { url: nito1.url, alt: "Collage en duotono de la banda Nito D'Lab en vivo" },
-      { url: nito2.url, alt: "Póster de Morelo, baterista de Nito D'Lab" },
-      { url: nito3.url, alt: "Póster de Juan, bajista de Nito D'Lab" },
-      { url: nito4.url, alt: "Póster de Andrés, guitarrista de Nito D'Lab" },
-    ],
-  },
-];
+const YOUTUBE_ID = "dAr6lIUvrrQ";
 
 export const Route = createFileRoute("/")({
   head: () => ({
