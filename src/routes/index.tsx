@@ -259,21 +259,6 @@ const copy = {
   },
 } as const;
 
-const services = [
-  {
-    title: "Dirección y Producción",
-    body: "De la idea al montaje final: guion, casting, plan de rodaje y post.",
-  },
-  {
-    title: "Dirección de fotografía y Cámara",
-    body: "Luz, color y cámara con una paleta construida a medida de cada historia.",
-  },
-  {
-    title: "Color y Post-Producción",
-    body: "Edición en Lightroom, Photoshop, Premiere, Capcut, After Effects.",
-  },
-];
-
 function Index() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [campaignsOpen, setCampaignsOpen] = useState(false);
