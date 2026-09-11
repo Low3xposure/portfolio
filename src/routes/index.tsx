@@ -1,29 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, Instagram, Languages, Mail, MessageCircle, Play, X } from "lucide-react";
-import heroAsset from "@/assets/hero-fluid.png.asset.json";
-import abalas1 from "@/assets/DSC07336.jpg.asset.json";
-import abalas2 from "@/assets/DSC07346.jpg.asset.json";
-import abalas3 from "@/assets/DSC07367.jpg.asset.json";
-import sg1 from "@/assets/DSC06453_1.jpg.asset.json";
-import sg2 from "@/assets/DSC06461_2.jpg.asset.json";
-import sg3 from "@/assets/DSC06474_2.jpg.asset.json";
-import sg4 from "@/assets/tefa_cortina_roja_2.jpg.asset.json";
-import sk1 from "@/assets/5-Recuperado.webp.asset.json";
-import sk2 from "@/assets/6-Recuperado.webp.asset.json";
-import sk3 from "@/assets/10-Recuperado.webp.asset.json";
-import sk4 from "@/assets/11-Recuperado.webp.asset.json";
-import z1 from "@/assets/DSC9691.jpg.asset.json";
-import z2 from "@/assets/DSC9694.jpg.asset.json";
-import z3 from "@/assets/DSC9695.jpg.asset.json";
-import z4 from "@/assets/DSC9699.jpg.asset.json";
-import z5 from "@/assets/DSC9701.jpg.asset.json";
-import z6 from "@/assets/DSC9709.jpg.asset.json";
-import z7 from "@/assets/DSC9714.jpg.asset.json";
-import z8 from "@/assets/DSC9720.jpg.asset.json";
-import z9 from "@/assets/DSC9723.jpg.asset.json";
+import heroAsset from "@/assets/hero-fluid.png";
+import abalas1 from "@/assets/DSC07336.jpg";
+import abalas2 from "@/assets/DSC07346.jpg";
+import abalas3 from "@/assets/DSC07367.jpg";
+import sg1 from "@/assets/DSC06453_1.jpg";
+import sg2 from "@/assets/DSC06461_2.jpg";
+import sg3 from "@/assets/DSC06474_2.jpg";
+import sg4 from "@/assets/tefa_cortina_roja_2.jpg";
+import sk1 from "@/assets/5-Recuperado.webp";
+import sk2 from "@/assets/6-Recuperado.webp";
+import sk3 from "@/assets/10-Recuperado.webp";
+import sk4 from "@/assets/11-Recuperado.webp";
+import z1 from "@/assets/DSC9691.jpg";
+import z2 from "@/assets/DSC9694.jpg";
+import z3 from "@/assets/DSC9695.jpg";
+import z4 from "@/assets/DSC9699.jpg";
+import z5 from "@/assets/DSC9701.jpg";
+import z6 from "@/assets/DSC9709.jpg";
+import z7 from "@/assets/DSC9714.jpg";
+import z8 from "@/assets/DSC9720.jpg";
+import z9 from "@/assets/DSC9723.jpg";
 
-const heroBg = heroAsset.url;
+const heroBg = heroAsset;
 
 type Lang = "es" | "en";
 
@@ -47,15 +47,15 @@ const campaigns: Campaign[] = [
     name: "Abalas",
     client: "Ghetto Running Club",
     year: "2026",
-    cover: abalas1.url,
+    cover: abalas1,
     description:
       "Campaña de moda urbana: dirección, fotografía y color para la colección Ghetto Running Club.",
     descriptionEn:
       "Streetwear campaign: direction, photography and color for the Ghetto Running Club collection.",
     media: [
-      { url: abalas1.url, alt: "Retrato a contrapicado con cielo azul — campaña Abalas" },
-      { url: abalas2.url, alt: "Retrato frente a muro naranja con grafiti — campaña Abalas" },
-      { url: abalas3.url, alt: "Retrato cenital apoyado en estructura azul — campaña Abalas" },
+      { url: abalas1, alt: "Retrato a contrapicado con cielo azul — campaña Abalas" },
+      { url: abalas2, alt: "Retrato frente a muro naranja con grafiti — campaña Abalas" },
+      { url: abalas3, alt: "Retrato cenital apoyado en estructura azul — campaña Abalas" },
     ],
   },
   {
@@ -64,21 +64,21 @@ const campaigns: Campaign[] = [
     client: "Zero — marca de ropa alternativa",
     clientEn: "Zero — alternative clothing brand",
     year: "2026",
-    cover: z3.url,
+    cover: z3,
     description: "Todo empieza desde Zero",
     descriptionEn: "Everything starts from Zero",
     role: "Dirección artística y fotográfica",
     roleEn: "Art direction and photography",
     media: [
-      { url: z1.url, alt: "Retrato frontal con camiseta blanca Zero — campaña Zero" },
-      { url: z2.url, alt: "Espalda con estampado tribal en camiseta blanca — campaña Zero" },
-      { url: z3.url, alt: "Detalle del estampado tribal en la espalda — campaña Zero" },
-      { url: z4.url, alt: "Retrato con gafas y camiseta sin mangas con llamas — campaña Zero" },
-      { url: z5.url, alt: "Espalda con estampado Reborn en camiseta sin mangas — campaña Zero" },
-      { url: z6.url, alt: "Retrato con camiseta de calaveras — campaña Zero" },
-      { url: z7.url, alt: "Espalda con estampado tribal plateado — campaña Zero" },
-      { url: z8.url, alt: "Retrato con camiseta negra tribal — campaña Zero" },
-      { url: z9.url, alt: "Primer plano con gafas y camiseta negra tribal — campaña Zero" },
+      { url: z1, alt: "Retrato frontal con camiseta blanca Zero — campaña Zero" },
+      { url: z2, alt: "Espalda con estampado tribal en camiseta blanca — campaña Zero" },
+      { url: z3, alt: "Detalle del estampado tribal en la espalda — campaña Zero" },
+      { url: z4, alt: "Retrato con gafas y camiseta sin mangas con llamas — campaña Zero" },
+      { url: z5, alt: "Espalda con estampado Reborn en camiseta sin mangas — campaña Zero" },
+      { url: z6, alt: "Retrato con camiseta de calaveras — campaña Zero" },
+      { url: z7, alt: "Espalda con estampado tribal plateado — campaña Zero" },
+      { url: z8, alt: "Retrato con camiseta negra tribal — campaña Zero" },
+      { url: z9, alt: "Primer plano con gafas y camiseta negra tribal — campaña Zero" },
     ],
   },
 ];
@@ -91,14 +91,14 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: sg4.url,
+    cover: sg4,
     description: "Eres una mujer extraña, parece que vienes de otro mundo",
     descriptionEn: "You are a strange girl, you seem to come from another world",
     media: [
-      { url: sg1.url, alt: "Retrato con brazos alzados sobre cortina roja — Strange Girl" },
-      { url: sg2.url, alt: "Silueta de perfil a contraluz sobre cortina roja — Strange Girl" },
-      { url: sg3.url, alt: "Retrato cenital entre pliegues de cortina roja — Strange Girl" },
-      { url: sg4.url, alt: "Rostro emergiendo del centro de una cortina roja — Strange Girl" },
+      { url: sg1, alt: "Retrato con brazos alzados sobre cortina roja — Strange Girl" },
+      { url: sg2, alt: "Silueta de perfil a contraluz sobre cortina roja — Strange Girl" },
+      { url: sg3, alt: "Retrato cenital entre pliegues de cortina roja — Strange Girl" },
+      { url: sg4, alt: "Rostro emergiendo del centro de una cortina roja — Strange Girl" },
     ],
   },
   {
@@ -107,14 +107,14 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: sk2.url,
+    cover: sk2,
     description: "Con la mente fría y las ruedas en llamas",
     descriptionEn: "Cold mind, wheels on fire",
     media: [
-      { url: sk1.url, alt: "Skater en el borde de la rampa de noche — sesión Skate" },
-      { url: sk2.url, alt: "Skater de pie frente a muro rosado con grafiti — sesión Skate" },
-      { url: sk3.url, alt: "Skater sentado en el borde de la rampa con su tabla — sesión Skate" },
-      { url: sk4.url, alt: "Skater en pleno truco sobre la rampa — sesión Skate" },
+      { url: sk1, alt: "Skater en el borde de la rampa de noche — sesión Skate" },
+      { url: sk2, alt: "Skater de pie frente a muro rosado con grafiti — sesión Skate" },
+      { url: sk3, alt: "Skater sentado en el borde de la rampa con su tabla — sesión Skate" },
+      { url: sk4, alt: "Skater en pleno truco sobre la rampa — sesión Skate" },
     ],
   },
 ];
