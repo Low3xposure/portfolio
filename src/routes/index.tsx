@@ -25,14 +25,19 @@ import z9 from "@/assets/DSC9723.jpg.asset.json";
 
 const heroBg = heroAsset.url;
 
+type Lang = "es" | "en";
+
 type Campaign = {
   slug: string;
   name: string;
   client: string;
+  clientEn?: string;
   year: string;
   cover: string;
   description: string;
+  descriptionEn?: string;
   role?: string;
+  roleEn?: string;
   media: { url: string; alt: string }[];
 };
 
@@ -45,6 +50,8 @@ const campaigns: Campaign[] = [
     cover: abalas1.url,
     description:
       "Campaña de moda urbana: dirección, fotografía y color para la colección Ghetto Running Club.",
+    descriptionEn:
+      "Streetwear campaign: direction, photography and color for the Ghetto Running Club collection.",
     media: [
       { url: abalas1.url, alt: "Retrato a contrapicado con cielo azul — campaña Abalas" },
       { url: abalas2.url, alt: "Retrato frente a muro naranja con grafiti — campaña Abalas" },
@@ -55,10 +62,13 @@ const campaigns: Campaign[] = [
     slug: "zero",
     name: "Zero",
     client: "Zero — marca de ropa alternativa",
+    clientEn: "Zero — alternative clothing brand",
     year: "2026",
     cover: z3.url,
     description: "Todo empieza desde Zero",
+    descriptionEn: "Everything starts from Zero",
     role: "Dirección artística y fotográfica",
+    roleEn: "Art direction and photography",
     media: [
       { url: z1.url, alt: "Retrato frontal con camiseta blanca Zero — campaña Zero" },
       { url: z2.url, alt: "Espalda con estampado tribal en camiseta blanca — campaña Zero" },
@@ -79,9 +89,11 @@ const sessions: Campaign[] = [
     slug: "strange-girl",
     name: "Strange Girl",
     client: "Sesión fotográfica",
+    clientEn: "Photo session",
     year: "2026",
     cover: sg4.url,
     description: "Eres una mujer extraña, parece que vienes de otro mundo",
+    descriptionEn: "You are a strange girl, you seem to come from another world",
     media: [
       { url: sg1.url, alt: "Retrato con brazos alzados sobre cortina roja — Strange Girl" },
       { url: sg2.url, alt: "Silueta de perfil a contraluz sobre cortina roja — Strange Girl" },
@@ -93,9 +105,11 @@ const sessions: Campaign[] = [
     slug: "skate",
     name: "Skate",
     client: "Sesión fotográfica",
+    clientEn: "Photo session",
     year: "2026",
     cover: sk2.url,
     description: "Con la mente fría y las ruedas en llamas",
+    descriptionEn: "Cold mind, wheels on fire",
     media: [
       { url: sk1.url, alt: "Skater en el borde de la rampa de noche — sesión Skate" },
       { url: sk2.url, alt: "Skater de pie frente a muro rosado con grafiti — sesión Skate" },
