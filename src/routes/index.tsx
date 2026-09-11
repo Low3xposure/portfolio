@@ -280,11 +280,42 @@ function Index() {
   const [sessionsOpen, setSessionsOpen] = useState(false);
   const [activeSession, setActiveSession] = useState<Campaign | null>(null);
   const [activeCampaign, setActiveCampaign] = useState<Campaign | null>(null);
+  const [lang, setLang] = useState<Lang>("es");
+  const t = copy[lang];
+  const en = lang === "en";
 
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-white/10 bg-black/40 px-6 py-4 backdrop-blur-md sm:px-10">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+          <span className="font-display text-lg font-bold tracking-tight">LOW EXPOSURE</span>
+          <div className="flex items-center gap-6 text-sm text-foreground/80 sm:gap-8">
+            <div className="hidden gap-8 sm:flex">
+              <a href="#trabajos" className="transition-colors hover:text-accent">
+                {t.navWorks}
+              </a>
+              <a href="#servicios" className="transition-colors hover:text-accent">
+                {t.navServices}
+              </a>
+              <a href="#contacto" className="transition-colors hover:text-accent">
+                {t.navContact}
+              </a>
+            </div>
+            <button
+              type="button"
+              onClick={() => setLang(en ? "es" : "en")}
+              aria-label={t.langAria}
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/30 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] transition-colors hover:border-accent hover:text-accent"
+            >
+              <Languages size={14} />
+              {t.langLabel}
+            </button>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero */}
-      <section className="relative isolate min-h-[92vh] px-6 pb-24 pt-28 sm:px-10">
+      <section className="relative min-h-[92vh] px-6 pb-24 pt-28 sm:px-10">
         <img
           src={heroBg}
           alt="Textura fluida de pintura en colores saturados"
@@ -292,51 +323,33 @@ function Index() {
         />
         <div className="fade-mask pointer-events-none absolute inset-0 -z-10" />
 
-        <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/40 px-6 py-4 backdrop-blur-md sm:px-10">
-          <div className="mx-auto flex max-w-6xl items-center justify-between">
-            <span className="font-display text-lg font-bold tracking-tight">LOW EXPOSURE</span>
-            <div className="hidden gap-8 text-sm text-foreground/80 sm:flex">
-              <a href="#trabajos" className="transition-colors hover:text-accent">
-                Trabajos
-              </a>
-              <a href="#servicios" className="transition-colors hover:text-accent">
-                Servicios
-              </a>
-              <a href="#contacto" className="transition-colors hover:text-accent">
-                Contacto
-              </a>
-            </div>
-          </div>
-        </nav>
-
         <div className="mx-auto mt-[24vh] max-w-6xl">
           <p className="mb-6 inline-flex rounded-full border border-foreground/25 bg-background/40 px-4 py-1.5 text-xs uppercase tracking-[0.28em] backdrop-blur">
-            Productor audiovisual · Medellín
+            {t.badge}
           </p>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
-            Historias que se
-            <span className="text-spectrum"> derraman </span>
-            en color.
+            {t.h1a}
+            <span className="text-spectrum"> {t.h1b} </span>
+            {t.h1c}
           </h1>
-          <p className="mt-8 max-w-xl text-lg text-foreground/85">
-            Soy Low Exposure&nbsp; Productor audiovisual&nbsp; y Fotógrafo. Dirijo y produzco videoclips, cortometrajes, contenido en redes y campañas publicitarias.
-          </p>
+          <p className="mt-8 max-w-xl text-lg text-foreground/85">{t.bio}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#trabajos"
               className="bg-spectrum glow rounded-full px-7 py-3.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
             >
-              Ver el reel
+              {t.ctaReel}
             </a>
             <a
               href="#contacto"
               className="rounded-full border border-foreground/30 bg-background/30 px-7 py-3.5 text-sm font-medium backdrop-blur transition-colors hover:border-accent hover:text-accent"
             >
-              Trabajemos juntos
+              {t.ctaWork}
             </a>
           </div>
         </div>
       </section>
+
 
       {/* Trabajos */}
       <section id="trabajos" className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
