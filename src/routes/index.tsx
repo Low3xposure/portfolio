@@ -186,7 +186,7 @@ function Index() {
   return (
     <main className="relative min-h-screen overflow-hidden">
       {/* Hero */}
-      <section className="relative isolate min-h-[92vh] px-6 pb-24 pt-8 sm:px-10">
+      <section className="relative isolate min-h-[92vh] px-6 pb-24 pt-28 sm:px-10">
         <img
           src={heroBg}
           alt="Textura fluida de pintura en colores saturados"
@@ -194,18 +194,20 @@ function Index() {
         />
         <div className="fade-mask pointer-events-none absolute inset-0 -z-10" />
 
-        <nav className="mx-auto flex max-w-6xl items-center justify-between">
-          <span className="font-display text-lg font-bold tracking-tight">LOW EXPOSURE</span>
-          <div className="hidden gap-8 text-sm text-foreground/80 sm:flex">
-            <a href="#trabajos" className="transition-colors hover:text-accent">
-              Trabajos
-            </a>
-            <a href="#servicios" className="transition-colors hover:text-accent">
-              Servicios
-            </a>
-            <a href="#contacto" className="transition-colors hover:text-accent">
-              Contacto
-            </a>
+        <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/40 px-6 py-4 backdrop-blur-md sm:px-10">
+          <div className="mx-auto flex max-w-6xl items-center justify-between">
+            <span className="font-display text-lg font-bold tracking-tight">LOW EXPOSURE</span>
+            <div className="hidden gap-8 text-sm text-foreground/80 sm:flex">
+              <a href="#trabajos" className="transition-colors hover:text-accent">
+                Trabajos
+              </a>
+              <a href="#servicios" className="transition-colors hover:text-accent">
+                Servicios
+              </a>
+              <a href="#contacto" className="transition-colors hover:text-accent">
+                Contacto
+              </a>
+            </div>
           </div>
         </nav>
 
