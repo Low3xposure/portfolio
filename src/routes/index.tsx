@@ -1,6 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowLeft, Instagram, Languages, Mail, MessageCircle, Play, X } from "lucide-react";
+import { Languages, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CustomCursor } from "@/components/effects/CustomCursor";
+import { AmbientParticles } from "@/components/effects/AmbientParticles";
+import { Hero } from "@/components/sections/Hero";
+import { Work } from "@/components/sections/Work";
+import { Services } from "@/components/sections/Services";
+import { Contact } from "@/components/sections/Contact";
+import { GalleryModal } from "@/components/sections/GalleryModal";
 import heroAsset from "@/assets/hero-fluid.png";
 import abalas1 from "@/assets/DSC07336.jpg";
 import abalas2 from "@/assets/DSC07346.jpg";
@@ -157,9 +165,8 @@ const works = [
   {
     title: "Fotografía Artistica",
     titleEn: "Fine Art Photography",
-    client: "Marea Studio",
-    type: "Documental",
-    typeEn: "Documentary",
+    type: "Sesiones",
+    typeEn: "Sessions",
     year: "2025",
     accent: "var(--cyan)",
   },
@@ -175,9 +182,8 @@ const works = [
   {
     title: "Campañas",
     titleEn: "Campaigns",
-    client: "Festival Óxido",
-    type: "Aftermovie",
-    typeEn: "Aftermovie",
+    type: "Dirección de marca",
+    typeEn: "Brand direction",
     year: "2025",
     accent: "var(--amber)",
   },
@@ -202,6 +208,12 @@ const services = [
     body: "Edición en Lightroom, Photoshop, Premiere, Capcut, After Effects.",
     bodyEn: "Editing in Lightroom, Photoshop, Premiere, Capcut, After Effects.",
   },
+  {
+    title: "Fotografía 3D",
+    titleEn: "3D Photography",
+    body: "Capturas estereoscópicas y renders que le dan volumen real a cada retrato.",
+    bodyEn: "Stereoscopic captures and renders that give every portrait real depth.",
+  },
 ];
 
 const copy = {
@@ -217,9 +229,11 @@ const copy = {
     ctaReel: "Ver el reel",
     ctaWork: "Trabajemos juntos",
     worksTitle: "Trabajos seleccionados",
+    viewLabel: "Ver",
     servicesTitle: "Qué hago",
     contactTitle: "¿Tienes un proyecto en mente?",
     contactSub: "Cuéntame la idea y armamos el equipo, el plan y el presupuesto.",
+    contactHud: "REC detenido — corte.",
     footer: "© 2026 Low Exposure · Producción audiovisual",
     campaignsTitle: "Campañas",
     allCampaigns: "Todas las campañas",
@@ -243,9 +257,11 @@ const copy = {
     ctaReel: "Watch the reel",
     ctaWork: "Let's work together",
     worksTitle: "Selected work",
+    viewLabel: "View",
     servicesTitle: "What I do",
     contactTitle: "Got a project in mind?",
     contactSub: "Tell me the idea and we'll build the team, the plan and the budget.",
+    contactHud: "REC stopped — cut.",
     footer: "© 2026 Low Exposure · Audiovisual production",
     campaignsTitle: "Campaigns",
     allCampaigns: "All campaigns",
@@ -270,19 +286,21 @@ function Index() {
   const en = lang === "en";
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-white/10 bg-black/40 px-6 py-4 backdrop-blur-md sm:px-10">
+    <main className="relative isolate min-h-screen overflow-hidden">
+      <CustomCursor />
+      <AmbientParticles />
+      <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-white/10 bg-black/50 px-6 py-4 backdrop-blur-md sm:px-10">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
-          <span className="font-display text-lg font-bold tracking-tight">LOW EXPOSURE</span>
+          <span className="font-display text-lg font-semibold tracking-tight">LOW EXPOSURE</span>
           <div className="flex items-center gap-6 text-sm text-foreground/80 sm:gap-8">
             <div className="hidden gap-8 sm:flex">
-              <a href="#trabajos" className="transition-colors hover:text-accent">
+              <a href="#trabajos" data-cursor="link" className="transition-colors hover:text-accent">
                 {t.navWorks}
               </a>
-              <a href="#servicios" className="transition-colors hover:text-accent">
+              <a href="#servicios" data-cursor="link" className="transition-colors hover:text-accent">
                 {t.navServices}
               </a>
-              <a href="#contacto" className="transition-colors hover:text-accent">
+              <a href="#contacto" data-cursor="link" className="transition-colors hover:text-accent">
                 {t.navContact}
               </a>
             </div>
@@ -290,6 +308,7 @@ function Index() {
               type="button"
               onClick={() => setLang(en ? "es" : "en")}
               aria-label={t.langAria}
+              data-cursor="link"
               className="inline-flex items-center gap-2 rounded-full border border-foreground/30 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] transition-colors hover:border-accent hover:text-accent"
             >
               <Languages size={14} />
@@ -299,428 +318,105 @@ function Index() {
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative min-h-[92vh] px-6 pb-24 pt-28 sm:px-10">
-        <img
-          src={heroBg}
-          alt="Textura fluida de pintura en colores saturados"
-          className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover opacity-90"
-        />
-        <div className="fade-mask pointer-events-none absolute inset-0 -z-10" />
-
-        <div className="mx-auto mt-[24vh] max-w-6xl">
-          <p className="mb-6 inline-flex rounded-full border border-foreground/25 bg-background/40 px-4 py-1.5 text-xs uppercase tracking-[0.28em] backdrop-blur">
-            {t.badge}
-          </p>
-          <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
-            {t.h1a}
-            <span className="text-spectrum"> {t.h1b} </span>
-            {t.h1c}
-          </h1>
-          <p className="mt-8 max-w-xl text-lg text-foreground/85">{t.bio}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#trabajos"
-              className="bg-spectrum glow rounded-full px-7 py-3.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
-            >
-              {t.ctaReel}
-            </a>
-            <a
-              href="#contacto"
-              className="rounded-full border border-foreground/30 bg-background/30 px-7 py-3.5 text-sm font-medium backdrop-blur transition-colors hover:border-accent hover:text-accent"
-            >
-              {t.ctaWork}
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero t={t} heroBg={heroBg} />
 
 
-      {/* Trabajos */}
-      <section id="trabajos" className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-        <div className="mb-12 flex items-end justify-between gap-6">
-          <h2 className="text-3xl font-bold sm:text-5xl">{t.worksTitle}</h2>
-          <span className="hidden text-sm text-muted-foreground sm:block">2024 — 2026</span>
-        </div>
+      <Work
+        t={t}
+        en={en}
+        works={works}
+        videoThumb={`https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+        sessionCover={sessions[0]!.cover}
+        sessionCount={sessions.length}
+        campaignCover={campaigns[0]!.cover}
+        campaignCount={campaigns.length}
+        onOpenVideo={() => setVideoOpen(true)}
+        onOpenSessions={() => {
+          setSessionsOpen(true);
+          setActiveSession(null);
+        }}
+        onOpenCampaigns={() => {
+          setCampaignsOpen(true);
+          setActiveCampaign(null);
+        }}
+      />
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          {works.map((w) =>
-            w.title === "VideoClip Musical" ? (
-              <article
-                key={w.title}
-                className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
-                onClick={() => setVideoOpen(true)}
-              >
-                <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
-                  <img
-                    src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
-                    alt="Miniatura del VideoClip Musical en YouTube"
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                  <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 backdrop-blur transition-transform group-hover:scale-110">
-                    <Play size={28} className="ml-1 text-white" fill="currentColor" />
-                  </span>
-                  <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {en ? w.typeEn : w.type}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between px-5 py-5">
-                  <div>
-                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
-                    <p className="text-sm text-muted-foreground">{w.client}</p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">{w.year}</span>
-                </div>
-              </article>
-            ) : w.title === "Campañas" ? (
-              <article
-                key={w.title}
-                className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
-                onClick={() => {
-                  setCampaignsOpen(true);
-                  setActiveCampaign(null);
-                }}
-              >
-                <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
-                  <img
-                    src={campaigns[0]!.cover}
-                    alt="Portada de la campaña Abalas"
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {t.campaignsCount(campaigns.length)}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between px-5 py-5">
-                  <div>
-                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
-                    <p className="text-sm text-muted-foreground">{w.client}</p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">{w.year}</span>
-                </div>
-              </article>
-            ) : w.title === "Fotografía Artistica" ? (
-              <article
-                key={w.title}
-                className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
-                onClick={() => {
-                  setSessionsOpen(true);
-                  setActiveSession(null);
-                }}
-              >
-                <div className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6">
-                  <img
-                    src={sessions[0]!.cover}
-                    alt="Portada de la sesión Strange Girl"
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {t.sessionsCount(sessions.length)}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between px-5 py-5">
-                  <div>
-                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
-                    <p className="text-sm text-muted-foreground">{w.client}</p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">{w.year}</span>
-                </div>
-              </article>
-            ) : (
-              <article key={w.title} className="card-fluid group overflow-hidden rounded-3xl p-1">
-                <div
-                  className="relative flex h-56 items-end overflow-hidden rounded-[1.4rem] p-6"
-                  style={{
-                    backgroundImage: `radial-gradient(120% 120% at 10% 100%, ${w.accent} 0%, transparent 55%), radial-gradient(100% 100% at 90% 0%, var(--violet) 0%, transparent 60%), linear-gradient(160deg, var(--card), var(--background))`,
-                  }}
-                >
-                  <span className="rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {en ? w.typeEn : w.type}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between px-5 py-5">
-                  <div>
-                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
-                    <p className="text-sm text-muted-foreground">{w.client}</p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">{w.year}</span>
-                </div>
-              </article>
-            ),
-          )}
-        </div>
-      </section>
+      <Services t={t} en={en} services={services} />
 
-      {/* Servicios */}
-      <section id="servicios" className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-        <h2 className="mb-12 text-3xl font-bold sm:text-5xl">{t.servicesTitle}</h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          {services.map((s, i) => (
-            <div key={s.title} className="card-fluid rounded-3xl p-7">
-              <span className="text-spectrum font-display text-4xl font-bold">
-                0{i + 1}
-              </span>
-              <h3 className="mt-5 text-xl font-bold">{en ? s.titleEn : s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{en ? s.bodyEn : s.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contacto */}
-      <section id="contacto" className="relative mx-auto max-w-6xl px-6 py-28 sm:px-10">
-        <div
-          className="glow-cool relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16"
-          style={{
-            backgroundImage:
-              "radial-gradient(90% 120% at 0% 0%, var(--magenta) 0%, transparent 55%), radial-gradient(90% 120% at 100% 100%, var(--cyan) 0%, transparent 55%), linear-gradient(160deg, var(--card), var(--background))",
-          }}
-        >
-          <h2 className="text-3xl font-bold sm:text-5xl">{t.contactTitle}</h2>
-          <p className="mx-auto mt-5 max-w-lg text-foreground/85">
-            {t.contactSub}
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="mailto:low3xposure@gmail.com"
-              className="glow inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(120deg, var(--cyan), var(--lime) 45%, var(--amber) 75%, var(--magenta))",
-              }}
-            >
-              <Mail size={18} />
-              low3xposure@gmail.com
-            </a>
-
-            <a
-              href="https://www.instagram.com/low_3xposure?igsi=MWhuZnF6OW9kNXNpNQ=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(120deg, var(--amber), var(--magenta) 55%, var(--violet))",
-              }}
-            >
-              <Instagram size={18} />
-              Instagram
-            </a>
-            <a
-              href="https://wa.me/qr/VQN7B26RTZC3M1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03]"
-              style={{
-                backgroundImage: "linear-gradient(120deg, var(--lime), var(--cyan))",
-              }}
-            >
-              <MessageCircle size={18} />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <Contact t={t} />
 
       <footer className="border-t border-border/60 px-6 py-10 text-center text-sm text-muted-foreground sm:px-10">
         {t.footer}
       </footer>
 
       {/* Video overlay */}
-      {videoOpen && (
-        <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
-          onClick={() => setVideoOpen(false)}
-        >
-          <button
+      <AnimatePresence>
+        {videoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
             onClick={() => setVideoOpen(false)}
-            aria-label={t.closeVideo}
-            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur transition-transform hover:scale-110"
           >
-            <X size={22} />
-          </button>
-          <div
-            className="aspect-video w-[95vw] max-w-6xl overflow-hidden rounded-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
-              title="VideoClip Musical"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="h-full w-full"
-            />
-          </div>
-        </div>
-      )}
-      {/* Campañas overlay */}
-      {campaignsOpen && (
-        <div className="fixed inset-0 z-[200] overflow-y-auto bg-background/95 backdrop-blur-md">
-          <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-            <div className="mb-10 flex items-center justify-between gap-4">
-              {activeCampaign ? (
-                <button
-                  onClick={() => setActiveCampaign(null)}
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
-                >
-                  <ArrowLeft size={16} />
-                  {t.allCampaigns}
-                </button>
-              ) : (
-                <h2 className="text-3xl font-bold sm:text-5xl">{t.campaignsTitle}</h2>
-              )}
-              <button
-                onClick={() => {
-                  setCampaignsOpen(false);
-                  setActiveCampaign(null);
-                }}
-                aria-label="Cerrar campañas"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-card/70 backdrop-blur transition-transform hover:scale-110"
-              >
-                <X size={22} />
-              </button>
+            <button
+              onClick={() => setVideoOpen(false)}
+              aria-label={t.closeVideo}
+              data-cursor="link"
+              className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur transition-transform hover:scale-110"
+            >
+              <X size={22} />
+            </button>
+            <div
+              className="aspect-video w-[95vw] max-w-6xl overflow-hidden rounded-2xl shadow-[var(--shadow-depth)]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
+                title="VideoClip Musical"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full"
+              />
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-            {!activeCampaign ? (
-              <div className="grid gap-6 sm:grid-cols-2">
-                {campaigns.map((c) => (
-                  <article
-                    key={c.slug}
-                    onClick={() => setActiveCampaign(c)}
-                    className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
-                  >
-                    <div className="relative h-80 overflow-hidden rounded-[1.4rem]">
-                      <img
-                        src={c.cover}
-                        alt={`Portada de la campaña ${c.name}`}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
-                      <div className="absolute bottom-0 left-0 p-6">
-                        <h3 className="text-spectrum text-3xl font-bold">{c.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {((en && c.clientEn) || c.client)} · {c.year}
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ) : (
-              <div>
-                <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
-                  {activeCampaign.name}
-                </h3>
-                <p className="mt-4 max-w-xl text-foreground/85">{(en && activeCampaign.descriptionEn) || activeCampaign.description}</p>
-                {activeCampaign.role && (
-                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-foreground/60">
-                    {(en && activeCampaign.roleEn) || activeCampaign.role}
-                  </p>
-                )}
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {((en && activeCampaign.clientEn) || activeCampaign.client)} · {activeCampaign.year}
-                </p>
-                <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
-                  {activeCampaign.media.map((m) => (
-                    <img
-                      key={m.url}
-                      src={m.url}
-                      alt={m.alt}
-                      loading="lazy"
-                      className="mb-6 w-full break-inside-avoid rounded-2xl border border-border/60"
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-      {/* Sesiones fotográficas overlay */}
-      {sessionsOpen && (
-        <div className="fixed inset-0 z-[200] overflow-y-auto bg-background/95 backdrop-blur-md">
-          <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-            <div className="mb-10 flex items-center justify-between gap-4">
-              {activeSession ? (
-                <button
-                  onClick={() => setActiveSession(null)}
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
-                >
-                  <ArrowLeft size={16} />
-                  {t.allSessions}
-                </button>
-              ) : (
-                <h2 className="text-3xl font-bold sm:text-5xl">{t.sessionsTitle}</h2>
-              )}
-              <button
-                onClick={() => {
-                  setSessionsOpen(false);
-                  setActiveSession(null);
-                }}
-                aria-label="Cerrar sesiones fotográficas"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-card/70 backdrop-blur transition-transform hover:scale-110"
-              >
-                <X size={22} />
-              </button>
-            </div>
+      <GalleryModal
+        open={campaignsOpen}
+        title={t.campaignsTitle}
+        allLabel={t.allCampaigns}
+        closeLabel="Cerrar campañas"
+        viewLabel={t.viewLabel}
+        en={en}
+        items={campaigns}
+        active={activeCampaign}
+        onSelect={setActiveCampaign}
+        onBack={() => setActiveCampaign(null)}
+        onClose={() => {
+          setCampaignsOpen(false);
+          setActiveCampaign(null);
+        }}
+      />
 
-            {!activeSession ? (
-              <div className="grid gap-6 sm:grid-cols-2">
-                {sessions.map((s) => (
-                  <article
-                    key={s.slug}
-                    onClick={() => setActiveSession(s)}
-                    className="card-fluid group cursor-pointer overflow-hidden rounded-3xl p-1"
-                  >
-                    <div className="relative h-80 overflow-hidden rounded-[1.4rem]">
-                      <img
-                        src={s.cover}
-                        alt={`Portada de la sesión ${s.name}`}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
-                      <div className="absolute bottom-0 left-0 p-6">
-                        <h3 className="text-spectrum text-3xl font-bold">{s.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {((en && s.clientEn) || s.client)} · {s.year}
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ) : (
-              <div>
-                <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
-                  {activeSession.name}
-                </h3>
-                <p className="mt-4 max-w-xl text-foreground/85">{(en && activeSession.descriptionEn) || activeSession.description}</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {((en && activeSession.clientEn) || activeSession.client)} · {activeSession.year}
-                </p>
-                <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
-                  {activeSession.media.map((m) => (
-                    <img
-                      key={m.url}
-                      src={m.url}
-                      alt={m.alt}
-                      loading="lazy"
-                      className="mb-6 w-full break-inside-avoid rounded-2xl border border-border/60"
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      <GalleryModal
+        open={sessionsOpen}
+        title={t.sessionsTitle}
+        allLabel={t.allSessions}
+        closeLabel="Cerrar sesiones fotográficas"
+        viewLabel={t.viewLabel}
+        en={en}
+        items={sessions}
+        active={activeSession}
+        onSelect={setActiveSession}
+        onBack={() => setActiveSession(null)}
+        onClose={() => {
+          setSessionsOpen(false);
+          setActiveSession(null);
+        }}
+      />
     </main>
   );
 }

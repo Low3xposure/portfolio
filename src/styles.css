@@ -34,9 +34,10 @@
   --color-cyan: var(--cyan);
   --color-lime: var(--lime);
   --color-amber: var(--amber);
-  --color-violet: var(--violet);
-  --font-display: "Space Grotesk", sans-serif;
-  --font-sans: "DM Sans", sans-serif;
+  --color-azure: var(--azure);
+  --font-display: "Clash Display", "General Sans", sans-serif;
+  --font-sans: "General Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
@@ -53,27 +54,29 @@
   --secondary-foreground: oklch(0.97 0.01 280);
   --muted: oklch(0.22 0.04 285);
   --muted-foreground: oklch(0.72 0.03 280);
-  --accent: oklch(0.78 0.19 195);
+  --accent: oklch(0.75 0.155 233);
   --accent-foreground: oklch(0.14 0.02 285);
   --destructive: oklch(0.62 0.25 25);
   --destructive-foreground: oklch(0.98 0.01 280);
   --border: oklch(0.3 0.06 285);
   --input: oklch(0.3 0.06 285);
-  --ring: oklch(0.78 0.19 195);
+  --ring: oklch(0.75 0.155 233);
 
-  --magenta: oklch(0.65 0.3 340);
-  --cyan: oklch(0.82 0.16 200);
-  --lime: oklch(0.88 0.24 135);
-  --amber: oklch(0.8 0.19 70);
-  --violet: oklch(0.5 0.26 285);
+  /* Sampled directly from the dominant vivid hues in src/assets/hero-fluid.png
+     (electric azure/cyan majority, gold + red-orange + lime + rose accents). */
+  --magenta: oklch(0.63 0.2 349);
+  --cyan: oklch(0.75 0.155 233);
+  --lime: oklch(0.95 0.21 118);
+  --amber: oklch(0.87 0.18 92);
+  --azure: oklch(0.58 0.233 260);
 
   --gradient-spectrum: linear-gradient(
     100deg,
-    var(--magenta),
-    var(--amber),
-    var(--lime),
+    var(--azure),
     var(--cyan),
-    var(--violet)
+    var(--lime),
+    var(--amber),
+    var(--magenta)
   );
   --gradient-fade: linear-gradient(
     to bottom,
@@ -83,11 +86,18 @@
   );
   --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--magenta) 55%, transparent);
   --shadow-glow-cool: 0 20px 60px -20px color-mix(in oklab, var(--cyan) 45%, transparent);
+  --shadow-depth: 0 2px 4px -2px rgba(0, 0, 0, 0.4), 0 24px 48px -16px rgba(0, 0, 0, 0.65);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -101,14 +111,36 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
   }
-}
 
-@utility text-spectrum {
-  background-image: var(--gradient-spectrum);
-  background-clip: text;
-  color: transparent;
+  ::selection {
+    background-color: var(--magenta);
+    color: var(--primary-foreground);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
 }
 
 @utility bg-spectrum {
@@ -131,14 +163,55 @@
   background-color: color-mix(in oklab, var(--card) 75%, transparent);
   backdrop-filter: blur(14px);
   border: 1px solid color-mix(in oklab, var(--cyan) 18%, transparent);
+  box-shadow: var(--shadow-depth);
   transition:
-    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.5s var(--ease-out-expo),
     border-color 0.4s ease,
-    box-shadow 0.4s ease;
+    box-shadow 0.5s var(--ease-out-expo);
 
   &:hover {
     transform: translateY(-6px);
     border-color: color-mix(in oklab, var(--magenta) 45%, transparent);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-depth), var(--shadow-glow);
   }
+}
+
+@utility grain {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility hud-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4%, -6%) scale(1.08);
+  }
+}
+
+@utility animate-drift {
+  animation: drift 16s ease-in-out infinite;
+}
+
+@utility animate-drift-slow {
+  animation: drift 22s ease-in-out infinite reverse;
 }

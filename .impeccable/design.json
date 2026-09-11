@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11T00:00:00.000Z",
+  "title": "Design System: Low Exposure",
+  "extensions": {
+    "colorMeta": {
+      "azure": {
+        "role": "primary",
+        "displayName": "Azure",
+        "canonical": "oklch(0.58 0.233 260)",
+        "tonalRamp": [
+          "oklch(0.18 0.09 260)",
+          "oklch(0.28 0.13 260)",
+          "oklch(0.38 0.17 260)",
+          "oklch(0.48 0.20 260)",
+          "oklch(0.58 0.233 260)",
+          "oklch(0.68 0.19 260)",
+          "oklch(0.80 0.13 260)",
+          "oklch(0.92 0.06 260)"
+        ]
+      },
+      "cyan": {
+        "role": "primary",
+        "displayName": "Cyan",
+        "canonical": "oklch(0.75 0.155 233)",
+        "tonalRamp": [
+          "oklch(0.20 0.06 233)",
+          "oklch(0.32 0.09 233)",
+          "oklch(0.44 0.11 233)",
+          "oklch(0.58 0.13 233)",
+          "oklch(0.68 0.145 233)",
+          "oklch(0.75 0.155 233)",
+          "oklch(0.85 0.10 233)",
+          "oklch(0.94 0.04 233)"
+        ]
+      },
+      "magenta": {
+        "role": "secondary",
+        "displayName": "Magenta",
+        "canonical": "oklch(0.63 0.2 349)",
+        "tonalRamp": [
+          "oklch(0.18 0.08 349)",
+          "oklch(0.28 0.12 349)",
+          "oklch(0.38 0.15 349)",
+          "oklch(0.50 0.18 349)",
+          "oklch(0.63 0.2 349)",
+          "oklch(0.73 0.15 349)",
+          "oklch(0.84 0.09 349)",
+          "oklch(0.93 0.04 349)"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Amber",
+        "canonical": "oklch(0.87 0.18 92)",
+        "tonalRamp": [
+          "oklch(0.20 0.06 92)",
+          "oklch(0.34 0.09 92)",
+          "oklch(0.48 0.12 92)",
+          "oklch(0.62 0.15 92)",
+          "oklch(0.75 0.17 92)",
+          "oklch(0.87 0.18 92)",
+          "oklch(0.93 0.12 92)",
+          "oklch(0.97 0.05 92)"
+        ]
+      },
+      "lime": {
+        "role": "secondary",
+        "displayName": "Lime",
+        "canonical": "oklch(0.95 0.21 118)",
+        "tonalRamp": [
+          "oklch(0.20 0.07 118)",
+          "oklch(0.34 0.11 118)",
+          "oklch(0.48 0.15 118)",
+          "oklch(0.62 0.18 118)",
+          "oklch(0.78 0.20 118)",
+          "oklch(0.88 0.21 118)",
+          "oklch(0.95 0.21 118)",
+          "oklch(0.98 0.08 118)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Void Violet",
+        "canonical": "oklch(0.13 0.03 285)",
+        "tonalRamp": [
+          "oklch(0.13 0.03 285)",
+          "oklch(0.18 0.04 285)",
+          "oklch(0.24 0.05 285)",
+          "oklch(0.30 0.06 285)",
+          "oklch(0.42 0.05 285)",
+          "oklch(0.58 0.04 285)",
+          "oklch(0.75 0.02 285)",
+          "oklch(0.97 0.01 280)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card Violet",
+        "canonical": "oklch(0.18 0.04 285)",
+        "tonalRamp": [
+          "oklch(0.13 0.03 285)",
+          "oklch(0.18 0.04 285)",
+          "oklch(0.24 0.05 285)",
+          "oklch(0.30 0.06 285)",
+          "oklch(0.42 0.05 285)",
+          "oklch(0.58 0.04 285)",
+          "oklch(0.75 0.02 285)",
+          "oklch(0.97 0.01 280)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "oklch(0.97 0.01 280)",
+        "tonalRamp": [
+          "oklch(0.13 0.03 285)",
+          "oklch(0.24 0.04 285)",
+          "oklch(0.42 0.03 282)",
+          "oklch(0.58 0.03 281)",
+          "oklch(0.72 0.03 280)",
+          "oklch(0.84 0.02 280)",
+          "oklch(0.92 0.01 280)",
+          "oklch(0.97 0.01 280)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border Violet",
+        "canonical": "oklch(0.3 0.06 285)",
+        "tonalRamp": [
+          "oklch(0.16 0.03 285)",
+          "oklch(0.22 0.05 285)",
+          "oklch(0.30 0.06 285)",
+          "oklch(0.40 0.06 285)",
+          "oklch(0.52 0.05 285)",
+          "oklch(0.66 0.04 285)",
+          "oklch(0.80 0.02 285)",
+          "oklch(0.92 0.01 280)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1 only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles and gallery detail titles." },
+      "body": { "displayName": "Body", "purpose": "Bios, descriptions, running copy." },
+      "label": { "displayName": "HUD Label", "purpose": "Real technical/status readouts only (timecode, ƒ-stop, counts, channel names) — never decorative." }
+    },
+    "shadows": [
+      { "name": "shadow-depth", "value": "0 2px 4px -2px rgba(0,0,0,0.4), 0 24px 48px -16px rgba(0,0,0,0.65)", "purpose": "Structural ambient lift, present at rest on every card-fluid surface and gallery image." },
+      { "name": "shadow-glow", "value": "0 20px 60px -20px color-mix(in oklab, var(--magenta) 55%, transparent)", "purpose": "Warm response-only glow, added on hover/focus, stacked on top of shadow-depth." },
+      { "name": "shadow-glow-cool", "value": "0 20px 60px -20px color-mix(in oklab, var(--cyan) 45%, transparent)", "purpose": "Cool alternate response glow for cyan-accented contexts." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for reveals, hover transforms, and modal transitions." },
+      { "name": "drift", "value": "16s ease-in-out infinite alternate translate/scale", "purpose": "Ambient drifting motion on Contact panel's background blobs." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Highest-commitment CTA (Hero 'reel' button). Full accent gradient with warm glow.",
+      "html": "<a href=\"#trabajos\" class=\"ds-btn-primary\">Ver el reel</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; padding: 14px 28px; font-size: 14px; font-weight: 500; font-family: 'General Sans', sans-serif; color: oklch(0.13 0.03 285); background-image: linear-gradient(100deg, oklch(0.58 0.233 260), oklch(0.75 0.155 233), oklch(0.95 0.21 118), oklch(0.87 0.18 92), oklch(0.63 0.2 349)); box-shadow: 0 20px 60px -20px color-mix(in oklab, oklch(0.63 0.2 349) 55%, transparent); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.75 0.155 233); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost CTA paired with the primary button (Hero 'work' link).",
+      "html": "<a href=\"#contacto\" class=\"ds-btn-secondary\">Ver trabajos</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; padding: 14px 28px; font-size: 14px; font-weight: 500; font-family: 'General Sans', sans-serif; color: oklch(0.97 0.01 280); background: color-mix(in oklab, oklch(0.13 0.03 285) 30%, transparent); backdrop-filter: blur(8px); border: 1px solid color-mix(in oklab, oklch(0.97 0.01 280) 30%, transparent); transition: color 0.3s ease, border-color 0.3s ease; } .ds-btn-secondary:hover, .ds-btn-secondary:focus-visible { border-color: oklch(0.75 0.155 233); color: oklch(0.75 0.155 233); }"
+    },
+    {
+      "name": "Work Tile Card",
+      "kind": "card",
+      "refersTo": "card-work",
+      "description": "Bento-grid media tile (Work section / GalleryModal grid) with glassmorphic surface and viewfinder-corner hover reveal.",
+      "html": "<article class=\"ds-card-work\"><div class=\"ds-card-work__media\"><img src=\"cover.jpg\" alt=\"\"/><span class=\"ds-card-work__corner ds-card-work__corner--tl\"></span><span class=\"ds-card-work__corner ds-card-work__corner--tr\"></span><span class=\"ds-card-work__corner ds-card-work__corner--bl\"></span><span class=\"ds-card-work__corner ds-card-work__corner--br\"></span></div><div class=\"ds-card-work__meta\"><h3>Project Name</h3><p class=\"ds-hud-label\">TYPE · CLIENT · YEAR</p></div></article>",
+      "css": ".ds-card-work { border-radius: 1.75rem; overflow: hidden; cursor: pointer; background-color: color-mix(in oklab, oklch(0.18 0.04 285) 75%, transparent); backdrop-filter: blur(14px); border: 1px solid color-mix(in oklab, oklch(0.75 0.155 233) 18%, transparent); box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4), 0 24px 48px -16px rgba(0,0,0,0.65); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.4s ease, box-shadow 0.5s cubic-bezier(0.16,1,0.3,1); } .ds-card-work:hover { transform: translateY(-6px); border-color: color-mix(in oklab, oklch(0.63 0.2 349) 45%, transparent); box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4), 0 24px 48px -16px rgba(0,0,0,0.65), 0 20px 60px -20px color-mix(in oklab, oklch(0.63 0.2 349) 55%, transparent); } .ds-card-work__media { position: relative; aspect-ratio: 3/4; } .ds-card-work__media img { width: 100%; height: 100%; object-fit: cover; } .ds-card-work__corner { position: absolute; width: 20px; height: 20px; border-color: currentColor; opacity: 0; transition: opacity 0.5s ease; color: color-mix(in oklab, oklch(0.97 0.01 280) 50%, transparent); } .ds-card-work:hover .ds-card-work__corner { opacity: 1; } .ds-card-work__corner--tl { top: 12px; left: 12px; border-left: 2px solid; border-top: 2px solid; } .ds-card-work__corner--tr { top: 12px; right: 12px; border-right: 2px solid; border-top: 2px solid; } .ds-card-work__corner--bl { bottom: 12px; left: 12px; border-left: 2px solid; border-bottom: 2px solid; } .ds-card-work__corner--br { bottom: 12px; right: 12px; border-right: 2px solid; border-bottom: 2px solid; } .ds-card-work__meta { padding: 24px; } .ds-card-work__meta h3 { font-family: 'Clash Display', sans-serif; font-size: 22px; font-weight: 600; } .ds-hud-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px; opacity: 0.6; }"
+    },
+    {
+      "name": "Services Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Borderless editorial list row (Services section) — the structural alternative to a card grid.",
+      "html": "<div class=\"ds-service-row\"><h3>Dirección de fotografía</h3><p>Composición y luz para cada plano.</p><span class=\"ds-service-row__arrow\">&#8599;</span></div>",
+      "css": ".ds-service-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.4fr) auto; align-items: baseline; gap: 32px; padding: 32px 0; border-bottom: 1px solid color-mix(in oklab, oklch(0.3 0.06 285) 60%, transparent); } .ds-service-row h3 { font-family: 'Clash Display', sans-serif; font-size: 28px; font-weight: 600; transition: color 0.5s ease; } .ds-service-row p { font-size: 15px; line-height: 1.6; color: oklch(0.72 0.03 280); max-width: 36em; } .ds-service-row__arrow { color: color-mix(in oklab, oklch(0.97 0.01 280) 40%, transparent); transition: transform 0.5s ease, color 0.5s ease; } .ds-service-row:hover h3, .ds-service-row:hover .ds-service-row__arrow { color: oklch(0.58 0.233 260); } .ds-service-row:hover .ds-service-row__arrow { transform: translate(4px, -4px); }"
+    },
+    {
+      "name": "Contact Channel",
+      "kind": "custom",
+      "refersTo": "panel-contact",
+      "description": "Magnetic contact-channel row inside the Contact panel (mail / Instagram / WhatsApp).",
+      "html": "<a href=\"mailto:low3xposure@gmail.com\" class=\"ds-contact-channel\"><span class=\"ds-contact-channel__label\">low3xposure@gmail.com</span><span class=\"ds-contact-channel__cta\">ABRIR</span></a>",
+      "css": ".ds-contact-channel { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-radius: 1.75rem; padding: 16px 24px; background-color: color-mix(in oklab, oklch(0.18 0.04 285) 75%, transparent); backdrop-filter: blur(14px); border: 1px solid color-mix(in oklab, oklch(0.75 0.155 233) 18%, transparent); box-shadow: 0 2px 4px -2px rgba(0,0,0,0.4), 0 24px 48px -16px rgba(0,0,0,0.65); } .ds-contact-channel__label { font-size: 16px; font-weight: 500; } .ds-contact-channel__cta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.75 0.155 233); opacity: 0; transition: opacity 0.3s ease; } .ds-contact-channel:hover .ds-contact-channel__cta { opacity: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Grading Bay",
+    "overview": "Low Exposure reads as a dark color-grading suite with a viewfinder overlaid on it, not a generic dark-mode portfolio. The near-black violet background (oklch(0.13 0.03 285)) is the room; the saturated azure/cyan/lime/amber/magenta palette — sampled directly from real pixels in src/assets/hero-fluid.png, not chosen from a swatch — is the footage running through it. Real photography and video stills are the evidence of the work and are never obscured by decoration; every recurring chrome element (corner brackets, monospace HUD readouts) references an actual piece of camera/grading equipment rather than a generic UI affordance. The system rejects both flat corporate minimalism and loud gradient maximalism. Color is structural signal (accents on hover, on glow, on the single azure-dominant CTA) rather than an evenly-distributed rainbow wash. Section-to-section, the site deliberately varies its structural grammar — full-bleed parallax, asymmetric bento grid, borderless editorial list, drifting-blob panel — rather than repeating one card pattern four times.",
+    "keyCharacteristics": [
+      "Near-black violet-tinted neutral base with a five-hue accent family pulled from one source image, azure-dominant rather than evenly spread",
+      "Clash Display for headlines, General Sans for body, JetBrains Mono exclusively for HUD/label chrome",
+      "A recurring camera-viewfinder motif (bracket corners, timecodes, ƒ-stops) standing in for generic borders and badges",
+      "Deliberate structural variety per section: no repeated card template across Hero/Work/Services/Contact",
+      "Glassmorphic card-fluid surfaces (translucent blur + hairline border) over flat opaque cards"
+    ],
+    "rules": [
+      { "name": "The Committed Palette Rule", "body": "The five accent hues are fixed and image-derived; do not introduce a new accent hue for a new surface. Azure/cyan carry the majority of accent weight — new surfaces should default to azure/cyan before reaching for magenta/amber/lime.", "section": "colors" },
+      { "name": "The No-Gradient-Text Rule", "body": "Text is never rendered with a gradient-clip (background-clip: text). The system's earlier text-spectrum utility was removed; emphasis in running text comes from an animated solid-color cycle or from weight/color contrast, never from a rainbow fill on the glyphs themselves.", "section": "colors" },
+      { "name": "The Mono-Is-Evidence Rule", "body": "Monospace (hud-label) is used only for real, verifiable technical information — timecodes, ƒ-stops, counts, channel names. Never decorative micro-copy or an invented eyebrow/kicker label.", "section": "typography" },
+      { "name": "The Glow-On-Response Rule", "body": "Color-tinted glow shadows never appear at rest. shadow-depth is the only shadow present on an idle surface; shadow-glow/shadow-glow-cool are added only on hover/focus, stacked on top of — never replacing — the depth shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do sample new accent values from the hero image's actual dominant pixels rather than inventing a new hue; keep azure/cyan as the majority accent weight (see The Committed Palette Rule).",
+      "Do use ViewfinderCorners as the framing device for any new media tile or full-bleed section instead of a generic border or drop-shadow card.",
+      "Do keep hud-label (JetBrains Mono, uppercase, tabular-nums) reserved for real technical/status information — timecodes, ƒ-stops, counts, channel names.",
+      "Do vary structural grammar per section (grid vs. list vs. panel vs. full-bleed) rather than repeating the same card template across the page.",
+      "Do keep hairline borders at reduced opacity (/60 or lower); a full-strength border reads as off-system."
+    ],
+    "donts": [
+      "Don't clip text with a gradient (background-clip: text). The text-spectrum utility was deliberately removed; use color/weight or an animated solid-color cycle instead (see The No-Gradient-Text Rule).",
+      "Don't add per-item numbering badges (01 / 02 / 03) to individual Work or Service items. Aggregate HUD counts (e.g. \"04 SERVICIOS\", a year range) are the only sanctioned numeric readouts, and they describe the whole set, not a single item's rank.",
+      "Don't introduce an eyebrow/kicker label above a heading. The build's HUD readouts always carry real technical or status data; a decorative label above a title has no equivalent here and should not be added.",
+      "Don't add a shadow that is both hard-offset and undiffused (a flat drop-shadow with no blur). The system's shadow vocabulary is soft/diffuse only (shadow-depth, shadow-glow*); a hard offset shadow belongs to a different, non-neobrutalist world than this one."
+    ]
+  }
+}
