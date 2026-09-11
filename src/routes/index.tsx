@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowLeft, Instagram, Mail, MessageCircle, Play, X } from "lucide-react";
+import { ArrowLeft, Instagram, Languages, Mail, MessageCircle, Play, X } from "lucide-react";
 import heroAsset from "@/assets/hero-fluid.png.asset.json";
 import abalas1 from "@/assets/DSC07336.jpg.asset.json";
 import abalas2 from "@/assets/DSC07346.jpg.asset.json";
@@ -354,7 +354,7 @@ function Index() {
       {/* Trabajos */}
       <section id="trabajos" className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
         <div className="mb-12 flex items-end justify-between gap-6">
-          <h2 className="text-3xl font-bold sm:text-5xl">Trabajos seleccionados</h2>
+          <h2 className="text-3xl font-bold sm:text-5xl">{t.worksTitle}</h2>
           <span className="hidden text-sm text-muted-foreground sm:block">2024 — 2026</span>
         </div>
 
@@ -377,12 +377,12 @@ function Index() {
                     <Play size={28} className="ml-1 text-white" fill="currentColor" />
                   </span>
                   <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {w.type}
+                    {en ? w.typeEn : w.type}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between px-5 py-5">
                   <div>
-                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
                     <p className="text-sm text-muted-foreground">{w.client}</p>
                   </div>
                   <span className="text-sm text-muted-foreground">{w.year}</span>
@@ -406,12 +406,12 @@ function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {campaigns.length} campaña{campaigns.length > 1 ? "s" : ""}
+                    {t.campaignsCount(campaigns.length)}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between px-5 py-5">
                   <div>
-                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
                     <p className="text-sm text-muted-foreground">{w.client}</p>
                   </div>
                   <span className="text-sm text-muted-foreground">{w.year}</span>
@@ -435,12 +435,12 @@ function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <span className="relative rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {sessions.length} sesiones
+                    {t.sessionsCount(sessions.length)}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between px-5 py-5">
                   <div>
-                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
                     <p className="text-sm text-muted-foreground">{w.client}</p>
                   </div>
                   <span className="text-sm text-muted-foreground">{w.year}</span>
@@ -455,12 +455,12 @@ function Index() {
                   }}
                 >
                   <span className="rounded-full bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur">
-                    {w.type}
+                    {en ? w.typeEn : w.type}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between px-5 py-5">
                   <div>
-                    <h3 className="text-xl font-bold">{w.title}</h3>
+                    <h3 className="text-xl font-bold">{en ? w.titleEn : w.title}</h3>
                     <p className="text-sm text-muted-foreground">{w.client}</p>
                   </div>
                   <span className="text-sm text-muted-foreground">{w.year}</span>
@@ -473,15 +473,15 @@ function Index() {
 
       {/* Servicios */}
       <section id="servicios" className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-        <h2 className="mb-12 text-3xl font-bold sm:text-5xl">Qué hago</h2>
+        <h2 className="mb-12 text-3xl font-bold sm:text-5xl">{t.servicesTitle}</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((s, i) => (
             <div key={s.title} className="card-fluid rounded-3xl p-7">
               <span className="text-spectrum font-display text-4xl font-bold">
                 0{i + 1}
               </span>
-              <h3 className="mt-5 text-xl font-bold">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              <h3 className="mt-5 text-xl font-bold">{en ? s.titleEn : s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{en ? s.bodyEn : s.body}</p>
             </div>
           ))}
         </div>
@@ -496,9 +496,9 @@ function Index() {
               "radial-gradient(90% 120% at 0% 0%, var(--magenta) 0%, transparent 55%), radial-gradient(90% 120% at 100% 100%, var(--cyan) 0%, transparent 55%), linear-gradient(160deg, var(--card), var(--background))",
           }}
         >
-          <h2 className="text-3xl font-bold sm:text-5xl">¿Tienes un proyecto en mente?</h2>
+          <h2 className="text-3xl font-bold sm:text-5xl">{t.contactTitle}</h2>
           <p className="mx-auto mt-5 max-w-lg text-foreground/85">
-            Cuéntame la idea y armamos el equipo, el plan y el presupuesto.
+            {t.contactSub}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
@@ -543,18 +543,18 @@ function Index() {
       </section>
 
       <footer className="border-t border-border/60 px-6 py-10 text-center text-sm text-muted-foreground sm:px-10">
-        © 2026 Jon Franco · Producción audiovisual
+        {t.footer}
       </footer>
 
       {/* Video overlay */}
       {videoOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
           onClick={() => setVideoOpen(false)}
         >
           <button
             onClick={() => setVideoOpen(false)}
-            aria-label="Cerrar video"
+            aria-label={t.closeVideo}
             className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur transition-transform hover:scale-110"
           >
             <X size={22} />
@@ -575,7 +575,7 @@ function Index() {
       )}
       {/* Campañas overlay */}
       {campaignsOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-md">
+        <div className="fixed inset-0 z-[200] overflow-y-auto bg-background/95 backdrop-blur-md">
           <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
             <div className="mb-10 flex items-center justify-between gap-4">
               {activeCampaign ? (
@@ -584,10 +584,10 @@ function Index() {
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
                 >
                   <ArrowLeft size={16} />
-                  Todas las campañas
+                  {t.allCampaigns}
                 </button>
               ) : (
-                <h2 className="text-3xl font-bold sm:text-5xl">Campañas</h2>
+                <h2 className="text-3xl font-bold sm:text-5xl">{t.campaignsTitle}</h2>
               )}
               <button
                 onClick={() => {
@@ -620,7 +620,7 @@ function Index() {
                       <div className="absolute bottom-0 left-0 p-6">
                         <h3 className="text-spectrum text-3xl font-bold">{c.name}</h3>
                         <p className="text-sm text-muted-foreground">
-                          {c.client} · {c.year}
+                          {((en && c.clientEn) || c.client)} · {c.year}
                         </p>
                       </div>
                     </div>
@@ -632,14 +632,14 @@ function Index() {
                 <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
                   {activeCampaign.name}
                 </h3>
-                <p className="mt-4 max-w-xl text-foreground/85">{activeCampaign.description}</p>
+                <p className="mt-4 max-w-xl text-foreground/85">{(en && activeCampaign.descriptionEn) || activeCampaign.description}</p>
                 {activeCampaign.role && (
                   <p className="mt-2 text-sm uppercase tracking-[0.2em] text-foreground/60">
-                    {activeCampaign.role}
+                    {(en && activeCampaign.roleEn) || activeCampaign.role}
                   </p>
                 )}
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {activeCampaign.client} · {activeCampaign.year}
+                  {((en && activeCampaign.clientEn) || activeCampaign.client)} · {activeCampaign.year}
                 </p>
                 <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
                   {activeCampaign.media.map((m) => (
@@ -659,7 +659,7 @@ function Index() {
       )}
       {/* Sesiones fotográficas overlay */}
       {sessionsOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-md">
+        <div className="fixed inset-0 z-[200] overflow-y-auto bg-background/95 backdrop-blur-md">
           <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
             <div className="mb-10 flex items-center justify-between gap-4">
               {activeSession ? (
@@ -668,10 +668,10 @@ function Index() {
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/25 px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent"
                 >
                   <ArrowLeft size={16} />
-                  Todas las sesiones
+                  {t.allSessions}
                 </button>
               ) : (
-                <h2 className="text-3xl font-bold sm:text-5xl">Fotografía Artística</h2>
+                <h2 className="text-3xl font-bold sm:text-5xl">{t.sessionsTitle}</h2>
               )}
               <button
                 onClick={() => {
@@ -704,7 +704,7 @@ function Index() {
                       <div className="absolute bottom-0 left-0 p-6">
                         <h3 className="text-spectrum text-3xl font-bold">{s.name}</h3>
                         <p className="text-sm text-muted-foreground">
-                          {s.client} · {s.year}
+                          {((en && s.clientEn) || s.client)} · {s.year}
                         </p>
                       </div>
                     </div>
@@ -716,9 +716,9 @@ function Index() {
                 <h3 className="text-spectrum text-4xl font-bold sm:text-6xl">
                   {activeSession.name}
                 </h3>
-                <p className="mt-4 max-w-xl text-foreground/85">{activeSession.description}</p>
+                <p className="mt-4 max-w-xl text-foreground/85">{(en && activeSession.descriptionEn) || activeSession.description}</p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {activeSession.client} · {activeSession.year}
+                  {((en && activeSession.clientEn) || activeSession.client)} · {activeSession.year}
                 </p>
                 <div className="mt-10 columns-1 gap-6 sm:columns-2 lg:columns-3">
                   {activeSession.media.map((m) => (
