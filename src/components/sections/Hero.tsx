@@ -48,7 +48,10 @@ export function Hero({ t, heroBg }: HeroProps) {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[100svh] overflow-hidden px-6 pb-24 pt-28 sm:px-10">
+    <section
+      ref={sectionRef}
+      className="relative min-h-[100svh] overflow-hidden px-6 pb-24 pt-28 sm:px-10"
+    >
       <motion.img
         src={heroBg}
         alt="Textura fluida de pintura en colores saturados — naranjas, rojos, azules y verdes sobre negro"
@@ -60,46 +63,49 @@ export function Hero({ t, heroBg }: HeroProps) {
 
       <div className="pointer-events-none absolute inset-x-8 top-[7.5rem] z-10 flex items-start justify-between sm:inset-x-12">
         <span className="hud-label text-foreground/70">
-          <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#ff4100] align-middle" /> LOW EXPOSURE
+          <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#ff4100] align-middle" />{" "}
+          LOW EXPOSURE
         </span>
         <span className="hud-label text-foreground/70">{timecode}</span>
       </div>
-      <div className="pointer-events-none absolute inset-x-8 bottom-24 z-10 flex items-end justify-between sm:inset-x-12">
-        <span className="hud-label text-foreground/70">ƒ/1.4 · 24MM · MEDELLÍN</span>
+      <div className="pointer-events-none absolute inset-x-8 bottom-24 z-10 flex items-end justify-end sm:inset-x-12">
         <span className="hud-label hidden text-foreground/70 sm:block">SCROLL ↓</span>
       </div>
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 mx-auto mt-[24vh] max-w-6xl"
+        className="relative z-10 mt-[24vh]"
       >
-        <h1 className="max-w-4xl text-5xl font-semibold leading-[0.94] tracking-[-0.03em] sm:text-7xl lg:text-8xl">
-          {t.h1a}
-          <motion.span
-            className="inline-block"
-            animate={{ color: SCOPE_COLORS }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          >
-            {" "}
-            {t.h1b}{" "}
-          </motion.span>
-          {t.h1c}
-        </h1>
-        <p className="mt-8 max-w-xl text-lg text-foreground/85">{t.bio}</p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <MagneticButton
-            href="#trabajos"
-            className="bg-spectrum glow inline-flex rounded-full px-7 py-3.5 text-sm font-medium text-primary-foreground"
-          >
-            {t.ctaReel}
-          </MagneticButton>
-          <MagneticButton
-            href="#contacto"
-            className="inline-flex rounded-full border border-foreground/30 bg-background/30 px-7 py-3.5 text-sm font-medium backdrop-blur transition-colors hover:border-accent hover:text-accent"
-          >
-            {t.ctaWork}
-          </MagneticButton>
+        <div className="mx-auto max-w-6xl">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.94] tracking-[-0.03em] sm:text-7xl lg:text-8xl">
+            {t.h1a}
+            <motion.span
+              className="inline-block"
+              animate={{ color: SCOPE_COLORS }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            >
+              {" "}
+              {t.h1b}{" "}
+            </motion.span>
+            {t.h1c}
+          </h1>
+          <p className="mt-8 max-w-xl text-lg text-foreground/85">{t.bio}</p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <MagneticButton
+              href="#trabajos"
+              className="bg-spectrum glow inline-flex rounded-full px-7 py-3.5 text-sm font-medium text-primary-foreground"
+            >
+              {t.ctaReel}
+            </MagneticButton>
+            <MagneticButton
+              href="#contacto"
+              className="inline-flex rounded-full border border-foreground/30 bg-background/30 px-7 py-3.5 text-sm font-medium backdrop-blur transition-colors hover:border-accent hover:text-accent"
+            >
+              {t.ctaWork}
+            </MagneticButton>
+          </div>
         </div>
+        <p className="hud-label ml-2 mt-14 text-foreground/60">ƒ/1.4 · 24MM · MEDELLÍN</p>
       </motion.div>
     </section>
   );

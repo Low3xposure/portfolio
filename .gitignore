@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+package-lock.json
 dist
 dist-ssr
 .output
@@ -15,10 +16,17 @@ dist-ssr
 .tanstack/**
 .nitro
 *.local
+.env
 
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
+
+# Videos migrados a Cloudflare R2 (VITE_MEDIA_BASE_URL) — se conservan localmente como respaldo
+public/videos/
+
+# Fotos originales (RAW) sin procesar, no usadas por el sitio
+fotografia_artistica/
 
 # Editor directories and files
 .vscode/*

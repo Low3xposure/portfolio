@@ -1,4 +1,4 @@
-import { Instagram, Mail, MessageCircle } from "lucide-react";
+import { FileText, Instagram, Mail, MessageCircle } from "lucide-react";
 import { RevealOnScroll } from "@/components/effects/RevealOnScroll";
 import { MagneticButton } from "@/components/effects/MagneticButton";
 
@@ -6,10 +6,12 @@ type ContactCopy = {
   contactTitle: string;
   contactSub: string;
   contactHud: string;
+  cvLabel: string;
 };
 
 type ContactProps = {
   t: ContactCopy;
+  cvUrl: string;
 };
 
 const CHANNELS = [
@@ -39,7 +41,7 @@ const CHANNELS = [
   },
 ] as const;
 
-export function Contact({ t }: ContactProps) {
+export function Contact({ t, cvUrl }: ContactProps) {
   return (
     <section id="contacto" className="mx-auto max-w-6xl px-6 py-24 sm:px-10 lg:py-32">
       <RevealOnScroll>
@@ -92,6 +94,24 @@ export function Contact({ t }: ContactProps) {
                   </MagneticButton>
                 );
               })}
+              <MagneticButton
+                href={cvUrl}
+                strength={0.25}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-fluid group flex items-center justify-between gap-4 rounded-2xl px-6 py-4 transition-colors duration-300"
+              >
+                <span className="flex items-center gap-3 text-base font-medium">
+                  <FileText size={18} style={{ color: "var(--amber)" }} />
+                  {t.cvLabel}
+                </span>
+                <span
+                  className="hud-label opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ color: "var(--amber)" }}
+                >
+                  ABRIR
+                </span>
+              </MagneticButton>
             </div>
           </div>
         </div>
