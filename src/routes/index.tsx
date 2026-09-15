@@ -14,9 +14,6 @@ import heroAsset from "@/assets/hero-fluid.png";
 import abalas1 from "@/assets/DSC07336.jpg";
 import abalas2 from "@/assets/DSC07346.jpg";
 import abalas3 from "@/assets/DSC07367.jpg";
-import abalas4 from "@/assets/DSC07414.jpg";
-import abalas5 from "@/assets/DSC07415.jpg";
-import abalas6 from "@/assets/DSC07322.jpg";
 import sg1 from "@/assets/DSC06453_1.jpg";
 import sg2 from "@/assets/DSC06461_2.jpg";
 import sg3 from "@/assets/DSC06474_2.jpg";
@@ -34,37 +31,6 @@ import z6 from "@/assets/DSC9709.jpg";
 import z7 from "@/assets/DSC9714.jpg";
 import z8 from "@/assets/DSC9720.jpg";
 import z9 from "@/assets/DSC9723.jpg";
-import w1 from "@/assets/artistica/amatista/DSC05327.jpg";
-import w2 from "@/assets/artistica/amatista/DSC05328.jpg";
-import w3 from "@/assets/artistica/amatista/DSC05331.jpg";
-import w4 from "@/assets/artistica/amatista/DSC05337.jpg";
-import w5 from "@/assets/artistica/amatista/DSC05354.jpg";
-import n1 from "@/assets/artistica/nevado/DSC05786.jpg";
-import n2 from "@/assets/artistica/nevado/DSC05793.jpg";
-import n3 from "@/assets/artistica/nevado/DSC05797.jpg";
-import n4 from "@/assets/artistica/nevado/DSC05799.jpg";
-import n5 from "@/assets/artistica/nevado/DSC05823.jpg";
-import n6 from "@/assets/artistica/nevado/DSC05825.jpg";
-import n7 from "@/assets/artistica/nevado/DSC05849.jpg";
-import n8 from "@/assets/artistica/nevado/DSC05883.jpg";
-import n9 from "@/assets/artistica/nevado/DSC05918.jpg";
-import p1 from "@/assets/artistica/punk/1.jpg";
-import p2 from "@/assets/artistica/punk/2.jpg";
-import p3 from "@/assets/artistica/punk/3.jpg";
-import d1 from "@/assets/artistica/dreams/DSC05462.jpg";
-import d2 from "@/assets/artistica/dreams/DSC05466.jpg";
-import d3 from "@/assets/artistica/dreams/DSC05487.jpg";
-import d4 from "@/assets/artistica/dreams/DSC05536-2.jpg";
-import d5 from "@/assets/artistica/dreams/DSC05539.jpg";
-import d6 from "@/assets/artistica/dreams/DSC05627.jpg";
-import d7 from "@/assets/artistica/dreams/DSC05645.jpg";
-import g1 from "@/assets/artistica/golden-boy/DSC04228.jpg";
-import g2 from "@/assets/artistica/golden-boy/DSC04246.jpg";
-import g3 from "@/assets/artistica/golden-boy/DSC04255.jpg";
-import k1 from "@/assets/artistica/in-the-sky/2.jpg";
-import k2 from "@/assets/artistica/in-the-sky/3.jpg";
-import k3 from "@/assets/artistica/in-the-sky/4.jpg";
-import k4 from "@/assets/artistica/in-the-sky/11.jpg";
 import cortMonologoCover from "@/assets/cortometrajes/monologo-a-la-muerte-cover.png";
 import cortFilminutoCover from "@/assets/cortometrajes/filminuto-gabo-coolmind-cover.png";
 import cortGameOverCover from "@/assets/cortometrajes/game-over-cover.png";
@@ -75,6 +41,79 @@ import socialReelCover from "@/assets/social/reel-nito-dlab-cover.png";
 const heroBg = heroAsset;
 
 const cvUrl = "/Dylan_Franco_CV.pdf";
+
+const abalas4 = mediaUrl("/fotos/DSC07414.jpg");
+const abalas5 = mediaUrl("/fotos/DSC07415.jpg");
+const abalas6 = mediaUrl("/fotos/DSC07322.jpg");
+
+const w1 = mediaUrl("/fotos/artistica/amatista/DSC05327.jpg");
+const w2 = mediaUrl("/fotos/artistica/amatista/DSC05328.jpg");
+const w3 = mediaUrl("/fotos/artistica/amatista/DSC05331.jpg");
+const w4 = mediaUrl("/fotos/artistica/amatista/DSC05337.jpg");
+const w5 = mediaUrl("/fotos/artistica/amatista/DSC05354.jpg");
+const n1 = mediaUrl("/fotos/artistica/nevado/DSC05786.jpg");
+const n2 = mediaUrl("/fotos/artistica/nevado/DSC05793.jpg");
+const n3 = mediaUrl("/fotos/artistica/nevado/DSC05797.jpg");
+const n4 = mediaUrl("/fotos/artistica/nevado/DSC05799.jpg");
+const n5 = mediaUrl("/fotos/artistica/nevado/DSC05823.jpg");
+const n6 = mediaUrl("/fotos/artistica/nevado/DSC05825.jpg");
+const n7 = mediaUrl("/fotos/artistica/nevado/DSC05849.jpg");
+const n8 = mediaUrl("/fotos/artistica/nevado/DSC05883.jpg");
+const n9 = mediaUrl("/fotos/artistica/nevado/DSC05918.jpg");
+const p1 = mediaUrl("/fotos/artistica/punk/1.jpg");
+const p2 = mediaUrl("/fotos/artistica/punk/2.jpg");
+const p3 = mediaUrl("/fotos/artistica/punk/3.jpg");
+const d1 = mediaUrl("/fotos/artistica/dreams/DSC05462.jpg");
+const d2 = mediaUrl("/fotos/artistica/dreams/DSC05466.jpg");
+const d3 = mediaUrl("/fotos/artistica/dreams/DSC05487.jpg");
+const d4 = mediaUrl("/fotos/artistica/dreams/DSC05536-2.jpg");
+const d5 = mediaUrl("/fotos/artistica/dreams/DSC05539.jpg");
+const d6 = mediaUrl("/fotos/artistica/dreams/DSC05627.jpg");
+const d7 = mediaUrl("/fotos/artistica/dreams/DSC05645.jpg");
+const g1 = mediaUrl("/fotos/artistica/golden-boy/DSC04228.jpg");
+const g2 = mediaUrl("/fotos/artistica/golden-boy/DSC04246.jpg");
+const g3 = mediaUrl("/fotos/artistica/golden-boy/DSC04255.jpg");
+const k1 = mediaUrl("/fotos/artistica/in-the-sky/2.jpg");
+const k2 = mediaUrl("/fotos/artistica/in-the-sky/3.jpg");
+const k3 = mediaUrl("/fotos/artistica/in-the-sky/4.jpg");
+const k4 = mediaUrl("/fotos/artistica/in-the-sky/11.jpg");
+
+const abalas4Thumb = mediaUrl("/fotos-thumb/DSC07414.jpg");
+const abalas5Thumb = mediaUrl("/fotos-thumb/DSC07415.jpg");
+const abalas6Thumb = mediaUrl("/fotos-thumb/DSC07322.jpg");
+
+const w1Thumb = mediaUrl("/fotos-thumb/artistica/amatista/DSC05327.jpg");
+const w2Thumb = mediaUrl("/fotos-thumb/artistica/amatista/DSC05328.jpg");
+const w3Thumb = mediaUrl("/fotos-thumb/artistica/amatista/DSC05331.jpg");
+const w4Thumb = mediaUrl("/fotos-thumb/artistica/amatista/DSC05337.jpg");
+const w5Thumb = mediaUrl("/fotos-thumb/artistica/amatista/DSC05354.jpg");
+const n1Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05786.jpg");
+const n2Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05793.jpg");
+const n3Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05797.jpg");
+const n4Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05799.jpg");
+const n5Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05823.jpg");
+const n6Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05825.jpg");
+const n7Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05849.jpg");
+const n8Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05883.jpg");
+const n9Thumb = mediaUrl("/fotos-thumb/artistica/nevado/DSC05918.jpg");
+const p1Thumb = mediaUrl("/fotos-thumb/artistica/punk/1.jpg");
+const p2Thumb = mediaUrl("/fotos-thumb/artistica/punk/2.jpg");
+const p3Thumb = mediaUrl("/fotos-thumb/artistica/punk/3.jpg");
+const d1Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05462.jpg");
+const d2Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05466.jpg");
+const d3Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05487.jpg");
+const d4Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05536-2.jpg");
+const d5Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05539.jpg");
+const d6Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05627.jpg");
+const d7Thumb = mediaUrl("/fotos-thumb/artistica/dreams/DSC05645.jpg");
+const g1Thumb = mediaUrl("/fotos-thumb/artistica/golden-boy/DSC04228.jpg");
+const g2Thumb = mediaUrl("/fotos-thumb/artistica/golden-boy/DSC04246.jpg");
+const g3Thumb = mediaUrl("/fotos-thumb/artistica/golden-boy/DSC04255.jpg");
+const k1Thumb = mediaUrl("/fotos-thumb/artistica/in-the-sky/2.jpg");
+const k2Thumb = mediaUrl("/fotos-thumb/artistica/in-the-sky/3.jpg");
+const k3Thumb = mediaUrl("/fotos-thumb/artistica/in-the-sky/4.jpg");
+const k4Thumb = mediaUrl("/fotos-thumb/artistica/in-the-sky/11.jpg");
+
 const nevadoVideo = mediaUrl("/videos/artistica/nevado/DSC05883.mp4");
 const inTheSkyVideo = mediaUrl("/videos/artistica/in-the-sky/3d.mp4");
 const monologoVideo = mediaUrl("/videos/cortometrajes/monologo-a-la-muerte.mp4");
@@ -97,7 +136,7 @@ type Campaign = {
   descriptionEn?: string;
   role?: string;
   roleEn?: string;
-  media: { url: string; alt: string; video?: boolean; poster?: string }[];
+  media: { url: string; thumb?: string; alt: string; video?: boolean; poster?: string }[];
 };
 
 const campaigns: Campaign[] = [
@@ -117,14 +156,17 @@ const campaigns: Campaign[] = [
       { url: abalas3, alt: "Retrato cenital apoyado en estructura azul — campaña Abalas" },
       {
         url: abalas4,
+        thumb: abalas4Thumb,
         alt: "Vista trasera con trenzas y camiseta Ghetto Running Club frente a muro con grafiti — campaña Abalas",
       },
       {
         url: abalas5,
+        thumb: abalas5Thumb,
         alt: "Primer plano del logo Abalas y cadena sobre camiseta negra — campaña Abalas",
       },
       {
         url: abalas6,
+        thumb: abalas6Thumb,
         alt: "Dos modelos recostados con camisetas Ghetto Running Club en contrapicado — campaña Abalas",
       },
     ],
@@ -193,14 +235,26 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: w4,
+    cover: w4Thumb,
     description: "Make me water",
     media: [
-      { url: w1, alt: "Retrato de espaldas con top rosa bajo una palmera — sesión Water" },
-      { url: w2, alt: "Retrato de espaldas con cabello recogido bajo una palmera — sesión Water" },
-      { url: w3, alt: "Retrato de perfil con flor en el cabello — sesión Water" },
-      { url: w4, alt: "Textura de agua turquesa en movimiento — sesión Water" },
-      { url: w5, alt: "Retrato en bikini rosa junto a una palmera — sesión Water" },
+      {
+        url: w1,
+        thumb: w1Thumb,
+        alt: "Retrato de espaldas con top rosa bajo una palmera — sesión Water",
+      },
+      {
+        url: w2,
+        thumb: w2Thumb,
+        alt: "Retrato de espaldas con cabello recogido bajo una palmera — sesión Water",
+      },
+      { url: w3, thumb: w3Thumb, alt: "Retrato de perfil con flor en el cabello — sesión Water" },
+      { url: w4, thumb: w4Thumb, alt: "Textura de agua turquesa en movimiento — sesión Water" },
+      {
+        url: w5,
+        thumb: w5Thumb,
+        alt: "Retrato en bikini rosa junto a una palmera — sesión Water",
+      },
     ],
   },
   {
@@ -209,33 +263,56 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: n1,
+    cover: n1Thumb,
     description: "A mucha altura con grados bajo 0.",
     descriptionEn: "High up, in sub-zero degrees.",
     media: [
       {
         url: n1,
+        thumb: n1Thumb,
         alt: "Hombre de espaldas contemplando un paisaje volcánico entre la niebla — sesión Nevado",
       },
-      { url: n2, alt: "Retrato con gafas y gorro de lana entre la niebla — sesión Nevado" },
-      { url: n3, alt: "Retrato con chaqueta negra sobre roca volcánica — sesión Nevado" },
+      {
+        url: n2,
+        thumb: n2Thumb,
+        alt: "Retrato con gafas y gorro de lana entre la niebla — sesión Nevado",
+      },
+      {
+        url: n3,
+        thumb: n3Thumb,
+        alt: "Retrato con chaqueta negra sobre roca volcánica — sesión Nevado",
+      },
       {
         url: n4,
+        thumb: n4Thumb,
         alt: "Figura solitaria caminando entre rocas volcánicas y niebla — sesión Nevado",
       },
-      { url: n5, alt: "Siluetas de excursionistas envueltas en niebla espesa — sesión Nevado" },
-      { url: n6, alt: "Retrato sentado sobre una roca con guantes y gorro — sesión Nevado" },
-      { url: n7, alt: "Detalle de botas de montaña sobre terreno volcánico — sesión Nevado" },
-      { url: n8, alt: "Agachado sobre las rocas con chaqueta gris — sesión Nevado" },
+      {
+        url: n5,
+        thumb: n5Thumb,
+        alt: "Siluetas de excursionistas envueltas en niebla espesa — sesión Nevado",
+      },
+      {
+        url: n6,
+        thumb: n6Thumb,
+        alt: "Retrato sentado sobre una roca con guantes y gorro — sesión Nevado",
+      },
+      {
+        url: n7,
+        thumb: n7Thumb,
+        alt: "Detalle de botas de montaña sobre terreno volcánico — sesión Nevado",
+      },
+      { url: n8, thumb: n8Thumb, alt: "Agachado sobre las rocas con chaqueta gris — sesión Nevado" },
       {
         url: n9,
+        thumb: n9Thumb,
         alt: "Caminando de espaldas por la cresta rocosa entre la niebla — sesión Nevado",
       },
       {
         url: nevadoVideo,
         alt: "Video detrás de cámara en el páramo — sesión Nevado",
         video: true,
-        poster: n1,
+        poster: n1Thumb,
       },
     ],
   },
@@ -245,7 +322,7 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: p1,
+    cover: p1Thumb,
     description:
       "El mundo es un lugar distopico parecido a una espiral, a veces, estás abajo, a veces, arriba y otras veces de cabeza.",
     descriptionEn:
@@ -253,14 +330,17 @@ const sessions: Campaign[] = [
     media: [
       {
         url: p1,
+        thumb: p1Thumb,
         alt: "Rostro enmarcado por una espiral de alambre de púas al atardecer — sesión Punk",
       },
       {
         url: p2,
+        thumb: p2Thumb,
         alt: "Primer plano de un rostro entre espirales de alambre de púas de noche — sesión Punk",
       },
       {
         url: p3,
+        thumb: p3Thumb,
         alt: "Rostro entre espirales de alambre de púas junto a un edificio — sesión Punk",
       },
     ],
@@ -271,27 +351,43 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: d7,
+    cover: d7Thumb,
     description: "En un mundo irreal solo nos liberan los sueños.",
     descriptionEn: "In an unreal world, only dreams set us free.",
     media: [
-      { url: d1, alt: "Retrato en picado con audífonos y luz verde — sesión Only in my dreams" },
+      {
+        url: d1,
+        thumb: d1Thumb,
+        alt: "Retrato en picado con audífonos y luz verde — sesión Only in my dreams",
+      },
       {
         url: d2,
+        thumb: d2Thumb,
         alt: "Retrato de cerca con audífonos bajo luz verde nocturna — sesión Only in my dreams",
       },
-      { url: d3, alt: "Retrato con luz cálida y audífonos — sesión Only in my dreams" },
-      { url: d4, alt: "Bebiendo de una lata bajo luz verde nocturna — sesión Only in my dreams" },
+      {
+        url: d3,
+        thumb: d3Thumb,
+        alt: "Retrato con luz cálida y audífonos — sesión Only in my dreams",
+      },
+      {
+        url: d4,
+        thumb: d4Thumb,
+        alt: "Bebiendo de una lata bajo luz verde nocturna — sesión Only in my dreams",
+      },
       {
         url: d5,
+        thumb: d5Thumb,
         alt: "Retrato sentada con audífonos y tatuaje en el brazo — sesión Only in my dreams",
       },
       {
         url: d6,
+        thumb: d6Thumb,
         alt: "Textura de malla metálica en tonos verde y naranja — sesión Only in my dreams",
       },
       {
         url: d7,
+        thumb: d7Thumb,
         alt: "Retrato en picado con audífonos bajo luz naranja — sesión Only in my dreams",
       },
     ],
@@ -302,14 +398,23 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: g2,
+    cover: g2Thumb,
     description: "Brillando en la oscuridad.",
     descriptionEn: "Shining in the dark.",
     media: [
-      { url: g1, alt: "Retrato de perfil con capucha blanca bajo el sol — sesión Golden Boy" },
-      { url: g2, alt: "Retrato a contraluz dorado apoyado en un pasamanos — sesión Golden Boy" },
+      {
+        url: g1,
+        thumb: g1Thumb,
+        alt: "Retrato de perfil con capucha blanca bajo el sol — sesión Golden Boy",
+      },
+      {
+        url: g2,
+        thumb: g2Thumb,
+        alt: "Retrato a contraluz dorado apoyado en un pasamanos — sesión Golden Boy",
+      },
       {
         url: g3,
+        thumb: g3Thumb,
         alt: "Retrato de cuerpo completo haciendo una seña con luz cálida — sesión Golden Boy",
       },
     ],
@@ -320,28 +425,35 @@ const sessions: Campaign[] = [
     client: "Sesión fotográfica",
     clientEn: "Photo session",
     year: "2026",
-    cover: k2,
+    cover: k2Thumb,
     description: "Me siento en el cielo, floto en la tierra",
     descriptionEn: "I sit in the sky, I float on the ground",
     media: [
       {
         url: k1,
+        thumb: k1Thumb,
         alt: "De pie junto a un poste con el tranvía y el cableado eléctrico detrás — sesión In the Sky",
       },
       {
         url: k2,
+        thumb: k2Thumb,
         alt: "Retrato junto al tranvía con las montañas y el cableado aéreo — sesión In the Sky",
       },
-      { url: k3, alt: "De pie sobre los rieles vacíos del tranvía — sesión In the Sky" },
+      {
+        url: k3,
+        thumb: k3Thumb,
+        alt: "De pie sobre los rieles vacíos del tranvía — sesión In the Sky",
+      },
       {
         url: k4,
+        thumb: k4Thumb,
         alt: "Retrato junto a un poste de grafitis en la estación del tranvía — sesión In the Sky",
       },
       {
         url: inTheSkyVideo,
         alt: "Video estereoscópico 3D de la sesión — sesión In the Sky",
         video: true,
-        poster: k2,
+        poster: k2Thumb,
       },
     ],
   },

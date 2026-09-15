@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
-type MediaItem = { url: string; alt: string; video?: boolean; poster?: string };
+type MediaItem = { url: string; thumb?: string; alt: string; video?: boolean; poster?: string };
 
 type MediaLightboxProps = {
   items: MediaItem[];
@@ -91,7 +91,7 @@ export function MediaLightbox({
                   }`}
                 >
                   <img
-                    src={item.video ? item.poster : item.url}
+                    src={item.video ? item.poster : (item.thumb ?? item.url)}
                     alt={item.alt}
                     className="h-14 w-24 object-cover sm:h-16 sm:w-28"
                   />

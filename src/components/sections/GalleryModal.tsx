@@ -16,7 +16,7 @@ type GalleryItem = {
   descriptionEn?: string;
   role?: string;
   roleEn?: string;
-  media: { url: string; alt: string; video?: boolean; poster?: string }[];
+  media: { url: string; thumb?: string; alt: string; video?: boolean; poster?: string }[];
 };
 
 type GalleryModalProps = {
@@ -171,7 +171,7 @@ export function GalleryModal({
                             className="mb-6 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border/60 shadow-[var(--shadow-depth)]"
                           >
                             <img
-                              src={m.url}
+                              src={m.thumb ?? m.url}
                               alt={m.alt}
                               loading="lazy"
                               className="block h-auto w-full"
