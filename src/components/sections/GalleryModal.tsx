@@ -195,6 +195,10 @@ export function GalleryModal({
           onNavigate={setLightboxIndex}
           onClose={() => setLightboxIndex(null)}
           closeLabel={en ? "Close" : "Cerrar"}
+          prevLabel={en ? "Previous" : "Anterior"}
+          nextLabel={en ? "Next" : "Siguiente"}
+          zoomInLabel={en ? "Zoom in" : "Acercar"}
+          zoomOutLabel={en ? "Zoom out" : "Alejar"}
         />
       )}
     </>

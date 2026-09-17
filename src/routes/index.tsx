@@ -666,6 +666,7 @@ const copy = {
     contactSub: "Cuéntame la idea y armamos el equipo, el plan y el presupuesto.",
     contactHud: "REC detenido — corte.",
     footer: "© 2026 Low Exposure · Producción audiovisual",
+    footerCredit: "Built by mariocanas.dev",
     campaignsTitle: "Campañas",
     allCampaigns: "Todas las campañas",
     campaignsCount: (n: number) => `${n} campaña${n > 1 ? "s" : ""}`,
@@ -702,6 +703,7 @@ const copy = {
     contactSub: "Tell me the idea and we'll build the team, the plan and the budget.",
     contactHud: "REC stopped — cut.",
     footer: "© 2026 Low Exposure · Audiovisual production",
+    footerCredit: "Built by mariocanas.dev",
     campaignsTitle: "Campaigns",
     allCampaigns: "All campaigns",
     campaignsCount: (n: number) => `${n} campaign${n > 1 ? "s" : ""}`,
@@ -826,7 +828,16 @@ function Index() {
       <Contact t={t} cvUrl={cvUrl} />
 
       <footer className="border-t border-border/60 px-6 py-10 text-center text-sm text-muted-foreground sm:px-10">
-        {t.footer}
+        <p>{t.footer}</p>
+        <a
+          href="https://mariocanas.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="link"
+          className="hud-label mt-3 inline-block text-foreground/40 transition-colors hover:text-accent"
+        >
+          {t.footerCredit}
+        </a>
       </footer>
 
       {/* Video overlay */}
